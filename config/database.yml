@@ -32,8 +32,9 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: super_production
+  database: clackamasriver
   pool: 5
-  username: root
-  password: 
-  socket: /tmp/mysql.sock
+  username: clackamasriver
+  password: crbc2011AI
+#  socket: /tmp/mysql.sock
+  host: mysql.clackamasriver.org
