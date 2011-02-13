@@ -1,0 +1,76 @@
+<%= form_for [:admin, @event] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+          :object => @event,
+          :include_object_name => true
+        } %>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :date_start -%>
+    <%= f.datetime_select :date_start -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :date_end -%>
+    <%= f.datetime_select :date_end -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :location_name -%>
+    <%= f.text_field :location_name -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :location_street_address -%>
+    <%= f.text_field :location_street_address -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :location_state -%>
+    <%= f.text_field :location_state -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :location_zip -%>
+    <%= f.text_field :location_zip -%>
+  </div>
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:description].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to part.to_s.titleize, "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div id='page_part_editors'>
+        <% [:description].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.events.event'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @event.title)
+              } %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>
