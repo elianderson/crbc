@@ -9,7 +9,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: super_development
+  database: crbc_dev
   pool: 5
   username: root
   password: 

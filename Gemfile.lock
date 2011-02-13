@@ -1,3 +1,8 @@
+PATH
+  remote: vendor/engines
+  specs:
+    refinerycms-events (1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -137,6 +142,8 @@ GEM
     refinerycms-i18n (0.9.9.7)
       refinerycms (>= 0.9.8)
       routing-filter (>= 0.2.3)
+    refinerycms-theming (0.9.9)
+      refinerycms (>= 0.9.9)
     routing-filter (0.2.3)
       actionpack
     rspec (2.3.0)
@@ -190,8 +197,10 @@ DEPENDENCIES
   rack-test (~> 0.5.6)
   rails (= 3.0.4)
   refinerycms (= 0.9.9)
+  refinerycms-events (= 1.0)!
   refinerycms-generators (~> 0.9)
   refinerycms-i18n (~> 0.9)
+  refinerycms-theming (~> 0.9.9)
   rspec-rails (= 2.3)
   ruby-prof
   spork

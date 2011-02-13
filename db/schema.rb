@@ -10,7 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110210043344) do
+ActiveRecord::Schema.define(:version => 20110213005507) do
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.datetime "date_start"
+    t.datetime "date_end"
+    t.string   "location_name"
+    t.string   "location_street_address"
+    t.string   "location_state"
+    t.string   "location_zip"
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["id"], :name => "index_events_on_id"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
@@ -49,10 +65,10 @@ ActiveRecord::Schema.define(:version => 20110210043344) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
-    t.text     "meta_description"
     t.string   "browser_title"
-    t.string   "title"
     t.string   "meta_keywords"
+    t.text     "meta_description"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
