@@ -1,21 +1,98 @@
 <!DOCTYPE html>
-<%= render :partial => "/shared/html_tag" %>
-  <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
-  <%= render :partial => "/shared/head" %>
-  <body>
-    <%= site_bar -%>
-    <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
-    <div id="page_container">
-      <header>
-        <%= render :partial => "/shared/header" -%>
-      </header>
-      <section id='page'>
-        <%= yield %>
-      </section>
-      <footer>
-        <%= render :partial => "/shared/footer" -%>
-      </footer>
-    </div>
-    <%= render :partial => "/shared/javascripts" %>
-  </body>
+<!--[if IE 6]><html lang="en" class="ie ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="ie ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="ie ie8"><![endif]-->
+<!--[if gt IE 8]><html lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link rel="stylesheet" href="/stylesheets/screen.css" media="screen, projection" />
+<link rel="icon" href="" />
+
+<meta name="author" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+</head>
+<body class="page-home">
+
+<div class="wrap home">
+	<div id="header" class="wrap">
+		<div class="i">
+			<a href="/" id="logo" class="ir">Clackamas River Basin Council</a>
+	
+			<ul id="nav" class="nav group">
+				<li><a href=""><span>Who We Are</span></a></li>
+				<li><a href="">What We Do</a>
+					<ul>
+						<li><a href="">Drop Menu Link</a></li>
+						<li><a href="">Drop Menu Link</a></li>
+						<li><a href="">Drop Menu Link</a></li>
+						<li><a href="">Drop Menu Link</a></li>
+						<li><a href="">Drop Menu Link</a></li>
+						<li><a href="">Drop Menu Link</a></li>
+					</ul>
+				</li>
+				<li><a href="">About the Watershed</a></li>
+				<li><a href="">Community</a></li>
+				<li><a href="">Resources</a></li>
+				<li><a href="">Contact Us</a></li>
+				<li class="donate"><a href="">Donate</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- Template Content -->
+	<%= yield %>
+
+<div id="footer">
+	<div class="i group">
+		<div class="col col6">
+			<h4>Sign-up For Our Newsletter</h4>
+			
+			<form action="" method="post" id="signup" class="group">
+				<label for="email">Email</label>
+				<input type="text" name="email" id="email" />
+				<button id="submit">Send</button>
+			</form>
+			
+			<ul class="icon nav">
+				<li class="tw"><a href="">Follow Us on Twitter &raquo;</a></li>
+				<li class="fb"><a href="">Like Us on Facebook &raquo;</a></li>
+			</ul>
+		</div>
+		
+		<div class="contact col col6 group last">
+			<h4>Contact Us</h4>
+			
+			<div class="col col2">
+				<p><strong>P.O. Box</strong> P.O. Box 1869<br /> Clackamas, OR 97015</p>
+			</div>
+			
+			<div class="col col2">
+				<p><strong>Tel/Fax</strong> Tel: 503.558.0550<br /> Fax: 503.558.0992</p>
+			</div>
+			
+			<div class="col col2 last">
+				<p><strong>Email</strong> <a href="mailto:somename@clackamasriver.org">somename@clackamasriver.org</a></p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="wrap foot">
+		<div class="i nav">
+			<ul>
+				<li><a href="">Who We Are</a></li>
+				<li><a href="">What We Do</a></li>
+				<li><a href="">About the Watershed</a></li>
+				<li><a href="">Community</a></li>
+				<li><a href="">Resources</a></li>
+				<li><a href="">Contact Us</a></li>
+			</ul>
+			
+			<p class="copy">Copyright CRBC 2011</p>
+		</div>
+	</div>
+</div><!-- END: footer -->
+</body>
 </html>
