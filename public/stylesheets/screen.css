@@ -83,14 +83,22 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 h1 {
-	font-size: 36px;
+	color: #204a74;
+	font-family: Georgia, Serif;
+	font-size: 30px;
+	font-style: italic;
 	line-height: 1.1944; /* 44px */
 	margin: 0 0 0.3571em; /* 15px */
+	text-shadow: 0 1px rgba(255, 255, 255, 1.0);
 }
 h2 {
-	font-size: 24px;
+	color: #204a74;
+	font-family: Georgia, Serif;
+	font-size: 22px;
+	font-style: italic;
 	line-height: 1.125; /* 27px */
 	margin: 0 0 0.5em; /* 12px */
+	text-shadow: 0 1px rgba(255, 255, 255, 1.0);
 }
 h3 {
 	color: #204a74;
@@ -181,28 +189,65 @@ blockquote p {
 .pad {
 	padding: 20px 0;
 }
+.banner {
+	margin: 0 auto;
+	padding: 40px 0 15px;
+	position: relative;
+	width: 940px;
+}
+.banner-inner .i {
+	border: 5px solid #204a74;
+	height: 85px;
+	overflow: hidden;
+	width: 930px;
+}
+.inner .box-light, .inner .box-spot {
+	padding: 10px;
+	width: 240px;
+}
+.inner .box-light {
+	margin-bottom: 20px;
+}
+.inner .social h3 {
+	font-size: 18px;
+	padding-bottom: 9px;
+}
+.inner .col {
+	margin-right: 30px;
+}
 
 
-/* - structure: 100% sections - */
+/* - structure: wrap 100% sections - */
 .wrap {
 	clear: both;
 	position: relative;
 	width: 100%;
 }
-.wrap.home {
+.wrap.header {
 	background: #70a6d4;
-	height: 520px;
+	height: 115px;
 	padding: 15px 0 0;
 }
 .wrap.border {
 	border-bottom: 1px solid #a3a69d;
 	border-top: 1px solid #a3a69d;
 }
-.banner {
-	margin: 0 auto;
+.wrap.banner {
+	background: #70a6d4;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.wrap.banner-inner {
+	background: #70a6d4;
 	padding: 40px 0 15px;
 	position: relative;
-	width: 940px;
+	width: 100%;
+}
+.wrap.shadow-top {
+	-moz-box-shadow: -1px -2px 2px 0 rgba(0, 0, 0, 0.40);
+	-webkit-box-shadow: -1px -2px 2px 0 rgba(0, 0, 0, 0.40);
+	box-shadow: -1px -2px 2px 0 rgba(0, 0, 0, 0.40);
 }
 .wrap.foot {
 	background: #204a74 url(/images/structure/nav-bg.jpg) repeat-x;
@@ -305,6 +350,7 @@ button[disabled] {
 	position: absolute;
 	top: -10px;
 	width: 118px;
+	z-index: 9999;
 	
 	-moz-box-shadow: #000 0 0 3px;
 	-webkit-box-shadow: #000 0 0 3px;
@@ -436,7 +482,10 @@ button[disabled] {
 .page-home .intro h2 {
 	background: transparent url(/images/structure/diamonds.png) no-repeat 5px 52px;
 	color: #204a74;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
 	font-size: 40px;
+	font-style: normal;
+	margin: 0;
 	padding: 0 5px;
 	text-align: left;
 	text-shadow: 0 1px rgba(255, 255, 255, 1.0);
@@ -505,6 +554,32 @@ button[disabled] {
 	-webkit-box-shadow: #000 0 0 3px;
 	box-shadow: #000 0 0 3px;
 }
+.slide-info {
+	background: rgba(12, 50, 86, 0.90);
+	bottom: 20px;
+	left: 20px;
+	padding: 20px;
+	position: absolute;
+	width: 370px;
+}
+.slide-info h2 {
+	color: #fff;
+	font-size: 36px;
+	font-weight: italic;
+	text-shadow: none;
+}
+.slide-info p {
+	color: #fff;
+	font-size: 16px;
+}
+.slide-info a {
+	border-bottom: 5px solid #68b2ed;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+}
 .slide-nav-mini {
 	position: absolute;
 	right: 20px;
@@ -516,6 +591,9 @@ button[disabled] {
 	height: 20px;
 	padding: 20px 15px;
 	width: 28px;
+}
+.slide-nav-mini a:hover {
+	background-color: rgba(33, 76, 117, 1.0);
 }
 .slide-nav-mini .next {
 	text-align: left;
@@ -564,11 +642,11 @@ button[disabled] {
 
 /* -- footer -- */
 #footer {
-	
+	margin-top: 10px;
 }
 #footer .col6 {
 	border-top: 5px solid #204a74;
-	padding: 10px 0 20px;
+	padding: 10px 0 30px;
 }
 .icon a {
 	background: transparent url(/images/icons/circle-social-icons.png) no-repeat left 0;
