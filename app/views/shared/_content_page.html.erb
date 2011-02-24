@@ -50,14 +50,14 @@
       if section[:title]
         section[:html] = "<h1 id='#{dom_id}'>#{section[:html]}</h1>"
       else
-        section[:html] = "<section id='#{dom_id}'>#{section[:html]}</section>"
+        section[:html] = "<div id='#{dom_id}'>#{section[:html]}</div>"
       end
     else
       css << "no_#{dom_id}"
     end
   end
 -%>
-<section id='body_content'<%= " class='#{css.join(' ')}'" if css.present? %>>
+<div class="col col8 last">
   <%= raw sections.map{|section| section[:html]}.join("\n") -%>
-</section>
+</div>
 <%= render :partial => '/shared/draft_page_message' unless @page.nil? or @page.live? -%>
