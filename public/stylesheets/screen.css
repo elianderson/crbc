@@ -406,7 +406,8 @@ button[disabled] {
 #nav li:hover ul, #nav li.sfhover ul {
 	left: auto;
 }
-#nav li li {
+#nav li li, #nav ul .last, #nav ul li:first-child {
+	background: transparent;
 	border-left: 0;
 	border-bottom: 1px solid #7897a9;
 	float: none;
