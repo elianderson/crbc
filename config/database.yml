@@ -12,7 +12,7 @@ development:
   database: crbc_dev
   pool: 5
   username: root
-  password: 
+  password: root
   socket: /tmp/mysql.sock
 #  host: 173.255.218.31
 

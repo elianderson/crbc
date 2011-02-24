@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110213005507) do
+ActiveRecord::Schema.define(:version => 20110224025714) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(:version => 20110213005507) do
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
+
+  create_table "humen", :force => true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "address"
+    t.string   "city"
+    t.integer  "zip"
+    t.boolean  "newsletter"
+    t.string   "email"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "humen", ["id"], :name => "index_humen_on_id"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
@@ -65,10 +80,10 @@ ActiveRecord::Schema.define(:version => 20110213005507) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
-    t.string   "browser_title"
-    t.string   "meta_keywords"
     t.text     "meta_description"
     t.string   "title"
+    t.string   "browser_title"
+    t.string   "meta_keywords"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -103,6 +118,22 @@ ActiveRecord::Schema.define(:version => 20110213005507) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
+
+  create_table "people", :force => true do |t|
+    t.string   "f_name"
+    t.string   "l_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.boolean  "newsletter"
+    t.string   "email"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "people", ["id"], :name => "index_people_on_id"
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"
@@ -154,6 +185,15 @@ ActiveRecord::Schema.define(:version => 20110213005507) do
   add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_name_sluggable_type_scope_and_sequence", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
+  create_table "tests", :force => true do |t|
+    t.string   "fname"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tests", ["id"], :name => "index_tests_on_id"
+
   create_table "user_plugins", :force => true do |t|
     t.integer "user_id"
     t.string  "name"
@@ -183,5 +223,21 @@ ActiveRecord::Schema.define(:version => 20110213005507) do
   end
 
   add_index "users", ["id"], :name => "index_users_on_id"
+
+  create_table "volunteers", :force => true do |t|
+    t.string   "f_name"
+    t.string   "l_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.boolean  "newsletter"
+    t.string   "email"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "volunteers", ["id"], :name => "index_volunteers_on_id"
 
 end

@@ -77,3 +77,5 @@ gem 'refinerycms-i18n',         '~> 0.9'
 # END USER DEFINED
 
 gem 'refinerycms-events', '1.0', :path => 'vendor/engines'
+gem 'refinerycms-people', '1.0', :path => 'vendor/engines'
+gem 'refinerycms-humen', '1.0', :path => 'vendor/engines'
