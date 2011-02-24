@@ -375,10 +375,10 @@ button[disabled] {
 	width: 120px;
 	z-index: 9999;
 }
-#nav li:first-child, #nav .donate {
+#nav li:first-child, #nav .last {
 	border-left: 0;
 }
-#nav .donate {
+#nav .last {
 	background: #e37031;
 	width: 105px;
 }

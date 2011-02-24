@@ -20,51 +20,8 @@
 	<div id="header" class="wrap">
 		<div class="i">
 			<a href="/" id="logo" class="ir">Clackamas River Basin Council</a>
-	
-			<ul id="nav" class="nav group">
-				<li><a href=""><span>Who We Are</span></a>
-					<ul>
-						<li><a href="">Our Staff</a></li>
-						<li><a href="">Board of Directors</a></li>
-						<li><a href="">Member Groups</a></li>
-					</ul>
-				</li>
-				<li><a href="">What We Do</a>
-					<ul>
-						<li><a href="">Assessment</a></li>
-						<li><a href="">Action Plan</a></li>
-						<li><a href="">Riparian Enhancement</a></li>
-						<li><a href="">Education &amp; Outreach</a></li>
-						<li><a href="">Where We Work</a></li>
-					</ul>
-				</li>
-				<li><a href="/about/">About the Watershed</a>
-					<ul>
-						<li><a href="">What is a Watershed</a></li>
-						<li><a href="">Fisheries</a></li>
-						<li><a href="">Recreation</a></li>
-						<li><a href="">Water Resources</a></li>
-					</ul>
-				</li>
-				<li><a href="">Community</a>
-					<ul>
-						<li><a href="">Events</a></li>
-						<li><a href="">Blog</a></li>
-						<li><a href="">Photo Gallery</a></li>
-					</ul>
-				</li>
-				<li><a href="">Resources</a>
-					<ul>
-						<li><a href="">Newsletter</a></li>
-						<li><a href="">Links</a></li>
-						<li><a href="">Fact Sheets</a></li>
-						<li><a href="">Invasive Species Removal</a></li>
-						<li><a href="">Pesticide Reduction</a></li>
-					</ul>
-				</li>
-				<li><a href="">Contact Us</a></li>
-				<li class="donate"><a href="">Donate</a></li>
-			</ul>
+			
+			<%= render :partial => "/shared/menu" -%>
 		</div>
 	</div>
 </div><!-- END: wrap header -->
@@ -92,12 +49,14 @@
 		<div class="contact col col6 group last">
 			<h4>Contact Us</h4>
 			
-			<div class="col col2">
-				<p><strong>P.O. Box</strong> P.O. Box 1869<br /> Clackamas, OR 97015</p>
-			</div>
-			
-			<div class="col col2">
-				<p><strong>Tel/Fax</strong> Tel: 503.558.0550<br /> Fax: 503.558.0992</p>
+			<div class="group">
+				<div class="col col2">
+					<p><strong>P.O. Box</strong> P.O. Box 1869<br /> Clackamas, OR 97015</p>
+				</div>
+				
+				<div class="col col2">
+					<p><strong>Tel/Fax</strong> Tel: 503.558.0550<br /> Fax: 503.558.0992</p>
+				</div>
 			</div>
 			
 			<div class="col col2 last">
