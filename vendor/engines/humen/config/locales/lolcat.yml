@@ -1,0 +1,24 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    humen:
+      title: Humen
+  admin:
+    humen:
+      index:
+        title: Humen
+        create_new: CREATE NEW Human
+        reorder: REORDR Humen
+        reorder_done: DUN REORDERIN Humen
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Humen YET. CLICK "CREATE NEW Human" 2 ADD UR FURST human.
+      human:
+        view_live_html: VIEW DIS human LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS human
+        delete: REMOOV DIS human FOREVR
+  humen:
+    show:
+      other: OTHR Humen

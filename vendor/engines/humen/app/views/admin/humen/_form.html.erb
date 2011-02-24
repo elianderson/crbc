@@ -1,0 +1,49 @@
+<%= form_for [:admin, @human] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+          :object => @human,
+          :include_object_name => true
+        } %>
+  
+  <div class='field'>
+    <%= f.label :fname -%>
+    <%= f.text_field :fname, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :lname -%>
+    <%= f.text_field :lname -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :address -%>
+    <%= f.text_field :address -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :city -%>
+    <%= f.text_field :city -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :zip -%>
+    <%= f.text_field :zip -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :newsletter -%>
+    <%= f.check_box :newsletter -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :email -%>
+    <%= f.text_field :email -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.humen.human'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @human.fname)
+              } %>
+<% end -%>

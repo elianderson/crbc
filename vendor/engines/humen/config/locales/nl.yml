@@ -1,0 +1,20 @@
+nl:
+  plugins:
+    humen:
+      title: Humen
+  admin:
+    humen:
+      index:
+        title: Humen
+        create_new: Maak een nieuwe Human
+        reorder: Wijzig de volgorde van de Humen
+        reorder_done: Klaar met het wijzingen van de volgorde van de Humen
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Humen. Druk op 'Maak een nieuwe Human' om de eerste aan te maken.
+      human:
+        view_live_html: Bekijk deze human op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze human
+        delete: Verwijder deze human voor eeuwig
+  humen:
+    show:
+      other: Andere Humen

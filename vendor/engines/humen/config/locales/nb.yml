@@ -1,0 +1,20 @@
+nb:
+  plugins:
+    humen:
+      title: Humen
+  admin:
+    humen:
+      index:
+        title: Humen
+        create_new: Lag en ny Human
+        reorder: Endre rekkefølgen på Humen
+        reorder_done: Ferdig å endre rekkefølgen Humen
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Humen enda. Klikk på "Lag en ny Human" for å legge til din første human.
+      human:
+        view_live_html: Vis hvordan denne human ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne human
+        delete: Fjern denne human permanent
+  humen:
+    show:
+      other: Andre Humen

@@ -1,0 +1,24 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    humen:
+      title: Humen
+  admin:
+    humen:
+      index:
+        title: Humen
+        create_new: Add New Human
+        reorder: Reorder Humen
+        reorder_done: Done Reordering Humen
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Humen yet. Click "Add New Human" to add your first human.
+      human:
+        view_live_html: View this human live <br/><em>(opens in a new window)</em>
+        edit: Edit this human
+        delete: Remove this human forever
+  humen:
+    show:
+      other: Other Humen
