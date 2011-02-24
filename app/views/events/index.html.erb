@@ -2,11 +2,7 @@
   <ul id="events">
     <% @events.each do |event| %>
       <li>
-        <h2><%= link_to event.title, event_url(event) %></h2>
-        <span><%= event.date_start.strftime("%m/%d/%Y %I:%M %p") %></span>
-        <span> - </span>
-        <span><%= event.date_end.strftime("%m/%d/%Y %I:%M %p") %></span>
-        <div><%= raw(event.description) %></div>
+        <%= link_to event.title, event_url(event) %>
       </li>
     <% end %>
   </ul>

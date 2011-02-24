@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110213005507) do
+ActiveRecord::Schema.define(:version => 20110224022351) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -38,6 +38,10 @@ ActiveRecord::Schema.define(:version => 20110213005507) do
     t.datetime "updated_at"
     t.string   "image_uid"
     t.string   "image_ext"
+    t.boolean  "home_image",      :default => false, :null => false
+    t.boolean  "gallery_image",   :default => false, :null => false
+    t.boolean  "gallery",         :default => false
+    t.boolean  "home",            :default => false
   end
 
   create_table "page_part_translations", :force => true do |t|
@@ -67,8 +71,8 @@ ActiveRecord::Schema.define(:version => 20110213005507) do
     t.string   "locale"
     t.string   "browser_title"
     t.string   "meta_keywords"
-    t.text     "meta_description"
     t.string   "title"
+    t.text     "meta_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
