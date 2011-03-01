@@ -6,15 +6,23 @@
 <!--[if !IE]><!--><html lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8" />
-<title></title>
+<title><%= @page[:browser_title] %></title>
 <link rel="stylesheet" href="/stylesheets/screen.css" media="screen, projection" />
 <link rel="icon" href="" />
 
 <meta name="author" content="" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
+<meta name="description" content="<%= @page[:meta_description] %>" />
+<meta name="keywords" content="<%= @page[:meta_keywords] %>" />
+<%= javascript_include_tag "jquery" %>
+<%	if @page.friendly_id_status.name == 'photo-gallery' %>
+<%		Image.where(:gallery => 1).each do |img| 		%>
+<%= 		image_tag img.url 							%>
+<%		end 											%>
+<%= 	javascript_include_tag "gallery/history", "gallery/opacity-rollover", "gallery/gallerific" %>
+<%	end  %>	
+
 </head>
-<body class="page-home">
+<body class="page-<%= @page.friendly_id_status.name %>">
 
 <div class="wrap header">
 	<div id="header" class="wrap">
