@@ -13,14 +13,7 @@
 <meta name="author" content="" />
 <meta name="description" content="<%= @page[:meta_description] %>" />
 <meta name="keywords" content="<%= @page[:meta_keywords] %>" />
-<%= javascript_include_tag "jquery" %>
-<%	if @page.friendly_id_status.name == 'photo-gallery' %>
-<%		Image.where(:gallery => 1).each do |img| 		%>
-<%= 		image_tag img.url 							%>
-<%		end 											%>
-<%= 	javascript_include_tag "gallery/history", "gallery/opacity-rollover", "gallery/gallerific" %>
-<%	end  %>	
-
+<%= javascript_include_tag 'jquery' %>
 </head>
 <body class="page-<%= @page.friendly_id_status.name %>">
 
