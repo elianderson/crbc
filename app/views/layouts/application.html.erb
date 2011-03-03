@@ -14,6 +14,7 @@
 <meta name="description" content="<%= @page[:meta_description] %>" />
 <meta name="keywords" content="<%= @page[:meta_keywords] %>" />
 <%= javascript_include_tag 'jquery' %>
+<%= @page[:link_url] == '/' ? javascript_include_tag('jquery.cycle.min', 'homepage') : '' %>
 </head>
 <body class="page-<%= @page.friendly_id_status.name %>">
 
