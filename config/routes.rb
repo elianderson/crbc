@@ -1,4 +1,8 @@
 Super::Application.routes.draw do
+
+	match 'photo-gallery' => 'pages#show_gallery'	
+	match '*section/photo-gallery' => 'pages#show_gallery'	
+	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

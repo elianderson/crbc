@@ -1,0 +1,323 @@
+<div class="wrap banner-inner">
+	<div class="i"><img src="/images/slideshow/test.jpg" alt="" /></div>
+</div>
+
+<div class="wrap shadow-top inner">
+		
+		<%=raw '<h1 id="body_content_title">'+@page[:title]+'</h1>' %>
+		
+		<!-- Gallery Holder -->
+		<div id="gallery" class="content">
+			<div class="slideshow-container">
+	
+				<div id="loading" class="loader"></div>
+				<div id="g_slideshow" class="slideshow"></div>
+				
+				<div id="controls" class="controls"></div>
+				<div class="top pagination"></div>
+				<div id="thumbs" class="navigation">
+						<ul class="thumbs noscript">
+							<% @gallery.each do |img| %>
+					        	<li style="width:100px;height:100px;display:block;">
+					        	<%= link_to image_tag (img.thumbnail.url, :width => '100px', :alt => img.title), img.url, :class => 'thumb'  %>
+					        	</li>
+			        		<% end %>
+						</ul>
+				</div>
+				<div class="bottom pagination"></div>
+			</div>
+		</div>
+				
+		<!-- End Gallery -->
+	</div>	
+		
+		<!--Gallery Styling -->
+		<style type="text/css">
+			#body_content_title {
+				width: 900px;
+				margin: 0 auto;
+				padding: 10px 0;
+				text-align: left;
+			}
+			div.content {
+				/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
+				display: none;
+				position: relative;
+			}
+			div.content a, div.navigation a {
+				text-decoration: none;
+				color: #777;
+			}
+			div.content a:focus, div.content a:hover, div.content a:active {
+				text-decoration: underline;
+			}
+			div.controls {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 900px;
+			}
+			div.controls a {
+				
+			}
+			div.ss-controls {
+				position: absolute;
+				top: 0; 
+				left: 0;
+				padding-left: 5px;
+			}
+			div.nav-controls {
+				position: absolute;
+				top: 0; 
+				right: 0;
+				padding-right: 5px;
+				width: 500px;
+			}
+			div.nav-controls a.prev {
+				position: absolute;
+				top: 0; 
+				left: 0;
+			}
+			div.nav-controls a.next {
+				position: absolute;
+				top: 0; 
+				right: 5px;
+			}
+			div.slideshow-container {
+				position: relative;
+				height: 505px; /* This should be set to be at least the height of the largest image in the slideshow */
+				width: 900px;
+				margin: 0 auto;
+				background: #fff;
+				
+				-moz-box-shadow: #000 0 0 3px;
+				-webkit-box-shadow: #000 0 0 3px;
+				box-shadow: #000 0 0 3px;
+			}
+			div.loader {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-image: url('loader.gif');
+				background-repeat: no-repeat;
+				background-position: center;
+				width: 550px;
+				height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+			}
+			div.slideshow {
+			
+			}
+			div.slideshow span.image-wrapper {
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			div.slideshow span.image-wrapper img {
+				width: 400px;
+				max-height: 450px;
+			}
+			div.slideshow a.advance-link {
+				display: block;
+				width: 550px;
+				height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+				line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+				text-align: center;
+			}
+			div.slideshow a.advance-link:hover, div.slideshow a.advance-link:active, div.slideshow a.advance-link:visited {
+				text-decoration: none;
+			}
+			div.slideshow img {
+				vertical-align: middle;
+				border: 1px solid #ccc;
+			}
+			div.caption-container {
+				position: relative;
+				clear: left;
+				height: 75px;
+			}
+			span.image-caption {
+				display: block;
+				position: absolute;
+				width: 550px;
+				top: 0;
+				left: 0;
+			}
+			div.caption {
+				padding: 12px;
+			}
+			div.image-title {
+				font-weight: bold;
+				font-size: 1.4em;
+			}
+			div.image-desc {
+				line-height: 1.3em;
+				padding-top: 12px;
+			}
+			div.navigation {
+				/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
+			}
+			ul.thumbs {
+				position: absolute;
+				top: 55px;
+				left: 20px;
+				margin: 0;
+				padding: 0;
+				width: 350px;
+			}
+			ul.thumbs li {
+				float: left;
+				padding: 0;
+				margin: 5px 10px 5px 0;
+				list-style: none;
+			}
+			a.thumb {
+				padding: 2px;
+				display: block;
+				border: 1px solid #ccc;
+			}
+			ul.thumbs li.selected a.thumb {
+				background: #000;
+			}
+			a.thumb:focus {
+				outline: none;
+			}
+			ul.thumbs img {
+				border: none;
+				display: block;
+			}
+			div.pagination {
+				clear: both;
+			}
+			div.top {
+				position: absolute;
+				top: 30px;
+				left:20px;
+			}
+			div.bottom {
+				position: absolute;
+				bottom: 10px;
+				left:20px;
+			}
+			div.top a, div.top span, div.bottom a, div.bottom span {
+				display: block;
+				float: left;
+			}
+			div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
+				display: block;
+				margin-right: 2px;
+				padding: 4px 7px 2px 7px;
+				border: 1px solid #ccc;
+			}
+			div.pagination a:hover {
+				background-color: #eee;
+				text-decoration: none;
+			}
+			div.pagination span.current {
+				font-weight: bold;
+				background-color: #000;
+				border-color: #000;
+				color: #fff;
+			}
+			div.pagination span.ellipsis {
+				border: none;
+				padding: 5px 0 3px 2px;
+			}
+
+		</style>
+		
+
+<%= javascript_include_tag 'gallery/gallerific.js', 'gallery/history.js', 'gallery/opacity-rollover.js' %>
+<script type="text/javascript">
+	$(document).ready(function($) {
+		// We only want these styles applied when javascript is enabled
+		$('div.navigation').css({'width' : '350px'});
+		$('div.content').css('display', 'block');
+
+		// Initially set opacity on thumbs and add
+		// additional styling for hover effect on thumbs
+		var onMouseOutOpacity = 0.67;
+		$('#thumbs ul.thumbs li').opacityrollover({
+			mouseOutOpacity:   onMouseOutOpacity,
+			mouseOverOpacity:  1.0,
+			fadeSpeed:         'fast',
+			exemptionSelector: '.selected'
+		});
+		
+		// Initialize Advanced Galleriffic Gallery
+		var gallery = $('#thumbs').galleriffic({
+			delay:                     2500,
+			numThumbs:                 12,
+			preloadAhead:              10,
+			enableTopPager:            true,
+			enableBottomPager:         true,
+			maxPagesToShow:            12,
+			imageContainerSel:         '#g_slideshow',
+			controlsContainerSel:      '#controls',
+			captionContainerSel:       '#caption',
+			loadingContainerSel:       '#loading',
+			renderSSControls:          true,
+			renderNavControls:         true,
+			playLinkText:              'Play Slideshow',
+			pauseLinkText:             'Pause Slideshow',
+			prevLinkText:              '&lsaquo; Previous Photo',
+			nextLinkText:              'Next Photo &rsaquo;',
+			nextPageLinkText:          'Next &rsaquo;',
+			prevPageLinkText:          '&lsaquo; Prev',
+			enableHistory:             true,
+			autoStart:                 false,
+			syncTransitions:           true,
+			defaultTransitionDuration: 900,
+			onSlideChange:             function(prevIndex, nextIndex) {
+				// 'this' refers to the gallery, which is an extension of $('#thumbs')
+				this.find('ul.thumbs').children()
+					.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+					.eq(nextIndex).fadeTo('fast', 1.0);
+			},
+			onPageTransitionOut:       function(callback) {
+				this.fadeTo('fast', 0.0, callback);
+			},
+			onPageTransitionIn:        function() {
+				this.fadeTo('fast', 1.0);
+			}
+		});
+
+		/**** Functions to support integration of galleriffic with the jquery.history plugin ****/
+
+		// PageLoad function
+		// This function is called when:
+		// 1. after calling $.historyInit();
+		// 2. after calling $.historyLoad();
+		// 3. after pushing "Go Back" button of a browser
+		function pageload(hash) {
+			// alert("pageload: " + hash);
+			// hash doesn't contain the first # character.
+			if(hash) {
+				$.galleriffic.gotoImage(hash);
+			} else {
+				gallery.gotoIndex(0);
+			}
+		}
+
+		// Initialize history plugin.
+		// The callback is called at once by present location.hash. 
+		$.historyInit(pageload, "advanced.html");
+
+		// set onlick event for buttons using the jQuery 1.3 live method
+		$("a[rel='history']").live('click', function(e) {
+			if (e.button != 0) return true;
+			
+			var hash = this.href;
+			hash = hash.replace(/^.*#/, '');
+
+			// moves to a new page. 
+			// pageload is called at once. 
+			// hash don't contain "#", "?"
+			$.historyLoad(hash);
+
+			return false;
+		});
+
+		/****************************************************************************************/
+	});
+</script>
