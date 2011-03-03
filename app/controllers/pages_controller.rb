@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   # This action is usually accessed with the root path, normally '/'
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
+    @gallery = Image.where(:home => 1).order('id DESC').limit(5)
   end
 
   # This action can be accessed normally, or as nested pages.
