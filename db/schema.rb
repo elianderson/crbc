@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224022351) do
+ActiveRecord::Schema.define(:version => 20110303021635) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -38,8 +38,14 @@ ActiveRecord::Schema.define(:version => 20110224022351) do
     t.datetime "updated_at"
     t.string   "image_uid"
     t.string   "image_ext"
-    t.boolean  "gallery",         :default => false
-    t.boolean  "home",            :default => false
+    t.boolean  "home_image",       :default => false, :null => false
+    t.boolean  "gallery_image",    :default => false, :null => false
+    t.boolean  "gallery",          :default => false
+    t.boolean  "home",             :default => false
+    t.string   "home_title"
+    t.string   "home_description"
+    t.string   "home_link"
+    t.string   "home_link_text"
   end
 
   create_table "page_part_translations", :force => true do |t|
@@ -69,8 +75,8 @@ ActiveRecord::Schema.define(:version => 20110224022351) do
     t.string   "locale"
     t.string   "browser_title"
     t.string   "meta_keywords"
-    t.text     "meta_description"
     t.string   "title"
+    t.text     "meta_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -105,16 +111,6 @@ ActiveRecord::Schema.define(:version => 20110224022351) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
-
-  create_table "people", :force => true do |t|
-    t.string   "f_name"
-    t.string   "l_name"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "people", ["id"], :name => "index_people_on_id"
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"

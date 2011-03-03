@@ -550,18 +550,10 @@ button[disabled] {
 	height: 350px;
 	position: relative;
 	width: 940px;
-	overflow: hidden;
-	z-index: 0;
 	
 	-moz-box-shadow: #000 0 0 3px;
 	-webkit-box-shadow: #000 0 0 3px;
 	box-shadow: #000 0 0 3px;
-}
-#slideshow .slide {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
 }
 .slide-info {
 	background: rgba(12, 50, 86, 0.90);
@@ -570,7 +562,6 @@ button[disabled] {
 	padding: 20px;
 	position: absolute;
 	width: 370px;
-	z-index: 2;
 }
 .slide-info h2 {
 	color: #fff;
@@ -594,7 +585,6 @@ button[disabled] {
 	position: absolute;
 	right: 20px;
 	top: 60px;
-	z-index: 2;
 }
 .slide-nav-mini a {
 	background: rgba(33, 76, 117, 0.8) url(/images/structure/large-arrows.png) no-repeat 15px 20px;
@@ -634,7 +624,7 @@ button[disabled] {
 	margin: 5px 0 0;
 	width: 20px;
 }
-.slide-nav-full a:hover, .slide-nav-full .on a, .slide-nav-full li.activeSlide a {
+.slide-nav-full a:hover, .slide-nav-full .on a {
 	background-position: 0 -20px;
 }
 
