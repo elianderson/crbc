@@ -1,30 +1,27 @@
 <div class="wrap banner">
 	<div class="banner">
 		<div id="slideshow">
-			<div class="slide">
-				<img src="/images/slideshow/test.jpg" alt="" />
-				<div class="slide-info">
-					<h2>What is a Watershed?</h2>
-					<p>Most people hear the word <q>watershed</q> and don't know exactly what to think.</p>
-					<a href="">Learn More &raquo;</a>
-				</div>
-			</div>
+			<% @gallery.each do |slide| %>
+				<%=raw '<div class="slide">' %>
+					<%= image_tag slide.url, :alt => slide.title, :height => '350px' %>	
+				<%=raw '</div>' %>
+			<% end %>
 		</div>
-		
+		<div class="slide-info">
+			<h2>What is a Watershed?</h2>
+			<p>Most people hear the word <q>watershed</q> and don't know exactly what to think.</p>
+			<a href="">Learn More &raquo;</a>
+		</div>
 		<ul class="slide-nav-mini">
-			<li class="prev ir"><a href="#">Previous</a></li>
-			<li class="next ir"><a href="#">Next</a></li>
+			<li class="prev ir"><a href="#prev">Previous</a></li>
+			<li class="next ir"><a href="#next">Next</a></li>
 		</ul>
 	</div>
 </div><!-- END: wrap banner -->
 
 <div class="wrap shadow-top">
 	<ol class="nav slide-nav-full">
-		<li><a href="#">Slide 1</a></li>
-		<li><a href="#">Slide 2</a></li>
-		<li><a href="#">Slide 3</a></li>
-		<li><a href="#">Slide 4</a></li>
-		<li><a href="#">Slide 5</a></li>
+		<!-- example > <li><a href="#slide">Slide 5</a></li> -->
 	</ol>
 </div>
 
@@ -58,3 +55,4 @@
 		<a href="">Read More &raquo;</a>
 	</div>
 </div>
+<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js', 'jquery.cycle.min', 'homepage' %>
