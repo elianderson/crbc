@@ -7,7 +7,7 @@ class Image < ActiveRecord::Base
 
   image_accessor :image
   
-  attr_accessible :home, :gallery, :image
+  attr_accessible :home, :gallery, :image, :home_title, :home_description, :home_link, :home_link_text
 
   validates :image, :presence  => {},
                     :length    => { :maximum => MAX_SIZE_IN_MB.megabytes }

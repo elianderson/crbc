@@ -16,11 +16,43 @@
         <%= f.file_field :image %>
         <label for="image_home"><%= f.check_box :home %> Home Image</label>
         <label for="image_gallery"><%= f.check_box :gallery %> Gallery Image</label>
-      </p><p></p>
+      </p>
+      <p>
+      	<fieldset>
+        <legend>Homepage Image Text (optional)</legend> 
+		<%= f.label :home_title %>
+  		<%= f.text_field :home_title %>
+  			
+  		<%= f.label :home_description %>
+  		<%=	f.text_field :home_description %>
+  			
+  		<%= f.label :home_link %>
+  		<%= f.text_field :home_link %>
+  			
+  		<%=	f.label :home_link_text %>
+  		<%=	f.text_field :home_link_text %>
+		</fieldset>
+      </p>
     <% else %>
       <%= f.file_field :image %>
       <label for="image_home"><%= f.check_box :home %> Home Image</label>
       <label for="image_gallery"><%= f.check_box :gallery %> Gallery Image</label>
+      <p>
+      	<fieldset>
+        <legend>Homepage Image Text (optional)</legend> 
+		<%= f.label :home_title %>
+  		<%= f.text_field :home_title %>
+  			
+  		<%= f.label :home_description %>
+  		<%=	f.text_field :home_description %>
+  			
+  		<%= f.label :home_link %>
+  		<%= f.text_field :home_link %>
+  			
+  		<%=	f.label :home_link_text %>
+  		<%=	f.text_field :home_link_text %>
+		</fieldset>
+      </p>
     <% end %>
   </div>
 

@@ -2,16 +2,15 @@
 	<div class="banner">
 		<div id="slideshow">
 			<% @gallery.each do |slide| %>
-				<%=raw '<div class="slide">' %>
+				<div class="slide">
 					<%= image_tag slide.url, :alt => slide.title, :height => '350px' %>	
-				<%=raw '</div>' %>
+					<div class="slide-info">
+						<h2><%= slide[:home_title] %></h2>
+						<p><%= slide[:home_description] %></p>
+						<a href="<%= slide[:home_link] %>"><%= slide[:home_link_text] %></a>
+					</div>
+				</div>
 			<% end %>
-		</div>
-		<div class="slide-info">
-			<h2>What is a Watershed?</h2>
-			<p>Most people hear the word <q>watershed</q> and don't know exactly what to think.</p>
-			<a href="">Learn More &raquo;</a>
-		</div>
 		<ul class="slide-nav-mini">
 			<li class="prev ir"><a href="#prev">Previous</a></li>
 			<li class="next ir"><a href="#next">Next</a></li>
