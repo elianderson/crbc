@@ -1,0 +1,20 @@
+nb:
+  plugins:
+    announcements:
+      title: Announcements
+  admin:
+    announcements:
+      index:
+        title: Announcements
+        create_new: Lag en ny Announcement
+        reorder: Endre rekkefølgen på Announcements
+        reorder_done: Ferdig å endre rekkefølgen Announcements
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Announcements enda. Klikk på "Lag en ny Announcement" for å legge til din første announcement.
+      announcement:
+        view_live_html: Vis hvordan denne announcement ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne announcement
+        delete: Fjern denne announcement permanent
+  announcements:
+    show:
+      other: Andre Announcements
