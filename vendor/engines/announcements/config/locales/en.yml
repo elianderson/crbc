@@ -1,0 +1,24 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    announcements:
+      title: Announcements
+  admin:
+    announcements:
+      index:
+        title: Announcements
+        create_new: Add New Announcement
+        reorder: Reorder Announcements
+        reorder_done: Done Reordering Announcements
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Announcements yet. Click "Add New Announcement" to add your first announcement.
+      announcement:
+        view_live_html: View this announcement live <br/><em>(opens in a new window)</em>
+        edit: Edit this announcement
+        delete: Remove this announcement forever
+  announcements:
+    show:
+      other: Other Announcements

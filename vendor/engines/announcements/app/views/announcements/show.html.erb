@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @announcement.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @announcement.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Blurb</h1>
+    <p>
+      <%=raw @announcement.blurb %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="announcements">
+      <% @announcements.each do |announcement| %>
+        <li>
+          <%= link_to announcement.title, announcement_url(announcement) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
