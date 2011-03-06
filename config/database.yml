@@ -12,9 +12,9 @@ development:
   database: crbc_dev
   pool: 5
   username: root
-  password: AndrewKramerae7
+  password:
   socket: /tmp/mysql.sock
-  host: 173.255.218.31
+# host: 173.255.218.31
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
