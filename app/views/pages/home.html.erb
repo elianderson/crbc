@@ -51,7 +51,10 @@
 	</div>
 	
 	<div class="col box-spot blog last">
-		<h3>From Our Blog</h3>
+		<h3>Announcements</h3>
+		<% @announcements.each do |ann|%>
+			<%= raw(ann.blurb) %>
+		<% end %>
 		<a href="">Read More &raquo;</a>
 	</div>
 </div>
