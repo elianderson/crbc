@@ -16,7 +16,7 @@
 <%= javascript_include_tag 'jquery' %>
 <%= @page[:link_url] == '/' ? javascript_include_tag('jquery.cycle.min', 'homepage') : '' %>
 </head>
-<body class="page-<%= @page.friendly_id_status.name %>">
+<body class="page-<%= @page[:link_url] == '/' ? 'home' : 'inner' %>">
 
 <div class="wrap header">
 	<div id="header" class="wrap">
