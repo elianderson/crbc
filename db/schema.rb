@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110303042401) do
+ActiveRecord::Schema.define(:version => 20110303044413) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -22,22 +22,6 @@ ActiveRecord::Schema.define(:version => 20110303042401) do
 
   add_index "announcements", ["id"], :name => "index_announcements_on_id"
 
-  create_table "events", :force => true do |t|
-    t.string   "title"
-    t.datetime "date_start"
-    t.datetime "date_end"
-    t.string   "location_name"
-    t.string   "location_street_address"
-    t.string   "location_state"
-    t.string   "location_zip"
-    t.text     "description"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "events", ["id"], :name => "index_events_on_id"
-
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
     t.string   "image_name"
@@ -48,31 +32,13 @@ ActiveRecord::Schema.define(:version => 20110303042401) do
     t.datetime "updated_at"
     t.string   "image_uid"
     t.string   "image_ext"
-    t.boolean  "home_image",       :default => false, :null => false
-    t.boolean  "gallery_image",    :default => false, :null => false
     t.boolean  "gallery",          :default => false
     t.boolean  "home",             :default => false
-    t.string   "home_title"
-    t.string   "home_description"
-    t.string   "home_link"
-    t.string   "home_link_text"
+    t.string   "home_title",       :default => "Title"
+    t.string   "home_description", :default => "Description"
+    t.string   "home_link",        :default => "#none"
+    t.string   "home_link_text",   :default => "Link"
   end
-
-  create_table "newsletters", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.boolean  "newsletter"
-    t.string   "email"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "newsletters", ["id"], :name => "index_newsletters_on_id"
 
   create_table "page_part_translations", :force => true do |t|
     t.integer  "page_part_id"
@@ -99,10 +65,10 @@ ActiveRecord::Schema.define(:version => 20110303042401) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
-    t.string   "browser_title"
     t.string   "meta_keywords"
-    t.string   "title"
     t.text     "meta_description"
+    t.string   "title"
+    t.string   "browser_title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
