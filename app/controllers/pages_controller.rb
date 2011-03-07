@@ -32,10 +32,5 @@ class PagesController < ApplicationController
       error_404
     end
   end
-  
-  def show_gallery
-  	error_404 unless (@page = Page.where(:title => 'Photo Gallery').first).present?
-  	@gallery = Image.where(:gallery => 1)
-  end
 
 end
