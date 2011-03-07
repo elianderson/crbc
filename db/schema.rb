@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110303042401) do
+ActiveRecord::Schema.define(:version => 20110307021703) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(:version => 20110303042401) do
     t.string   "home_link"
     t.string   "home_link_text"
   end
+
+  create_table "map_labels", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "map_labels", ["id"], :name => "index_map_labels_on_id"
 
   create_table "newsletters", :force => true do |t|
     t.string   "first_name"

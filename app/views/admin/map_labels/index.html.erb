@@ -1,0 +1,36 @@
+<div id='records'>
+  <% if searching? %>
+    <h2><%= t('results_for', :scope => 'shared.admin.search', :query => params[:search]) %></h2>
+  <% end %>
+  <% if @map_labels.any? %>
+    <div class='pagination_container'>
+      <%= render :partial => 'map_labels' %>
+    </div>
+  <% else %>
+    <p>
+      <% unless searching? %>
+        <strong>
+          <%= t('.no_items_yet') %>
+        </strong>
+      <% else %>
+        <%= t('no_results', :scope => 'shared.admin.search') %>
+      <% end %>
+    </p>
+  <% end %>
+</div>
+<div id='actions'>
+  <ul>
+    <% if Admin::MapLabelsController.searchable? %>
+      <li>
+        <%= render :partial => "/shared/admin/search",
+                    :locals => {
+                      :url => admin_map_labels_url
+                    } %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<%= render :partial => "/shared/admin/make_sortable",
+            :locals => {
+              :tree => false
+            } if !searching? and Admin::MapLabelsController.sortable? and MapLabel.count > 1 %>

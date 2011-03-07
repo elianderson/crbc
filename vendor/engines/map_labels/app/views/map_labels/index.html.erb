@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="map_labels">
+    <% @map_labels.each do |map_label| %>
+      <li>
+        <%= link_to map_label.title, map_label_url(map_label) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

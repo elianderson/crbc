@@ -1,0 +1,20 @@
+nl:
+  plugins:
+    map_labels:
+      title: Map Labels
+  admin:
+    map_labels:
+      index:
+        title: Map Labels
+        create_new: Maak een nieuwe Map Label
+        reorder: Wijzig de volgorde van de Map Labels
+        reorder_done: Klaar met het wijzingen van de volgorde van de Map Labels
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Map Labels. Druk op 'Maak een nieuwe Map Label' om de eerste aan te maken.
+      map_label:
+        view_live_html: Bekijk deze map label op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze map label
+        delete: Verwijder deze map label voor eeuwig
+  map_labels:
+    show:
+      other: Andere Map Labels
