@@ -16,9 +16,10 @@
         <%= f.file_field :image %>
         <label for="image_home"><%= f.check_box :home %> Home Image</label>
         <label for="image_gallery"><%= f.check_box :gallery %> Gallery Image</label>
-      </p><p></p>
+      </p>
     <% else %>
-      <%= f.file_field :image %>
+      <% # we must only hint at multiple when it's a new record otherwise update fails. %>
+      <%= f.file_field :image, :multiple => true %>
       <label for="image_home"><%= f.check_box :home %> Home Image</label>
       <label for="image_gallery"><%= f.check_box :gallery %> Gallery Image</label>
     <% end %>
