@@ -48,12 +48,8 @@ ActiveRecord::Schema.define(:version => 20110307021703) do
     t.datetime "updated_at"
     t.string   "image_uid"
     t.string   "image_ext"
-    t.boolean  "gallery",          :default => false
-    t.boolean  "home",             :default => false
-    t.string   "home_title",       :default => "Title"
-    t.string   "home_description", :default => "Description"
-    t.string   "home_link",        :default => "#none"
-    t.string   "home_link_text",   :default => "Link"
+    t.boolean  "gallery",         :default => false
+    t.boolean  "home",            :default => false
   end
 
   create_table "map_labels", :force => true do |t|
@@ -91,10 +87,10 @@ ActiveRecord::Schema.define(:version => 20110307021703) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
-    t.string   "meta_keywords"
     t.text     "meta_description"
-    t.string   "title"
     t.string   "browser_title"
+    t.string   "title"
+    t.string   "meta_keywords"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
