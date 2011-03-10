@@ -23,8 +23,7 @@
 		
 		<%= render :partial => "/shared/content_page" %>
 		
-		<%= image_tag '/images/crbc_map.jpg', :alt => 'Clackamas River Basin', :id => 'map' %>
-		<ul>
+		<ul id="map">
 		<% @labels.each do |label| %>
 			<% idTitle = label.title.gsub(/\s/, '_').downcase %>
 			<li id="<%= idTitle %>">
