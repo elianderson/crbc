@@ -41,6 +41,8 @@ class PagesController < ApplicationController
   def show_map
   	error_404 unless (@page = Page.where(:title => 'Where We Work').first).present?
   	@labels = MapLabel.all
+    error_404 unless (@page = Page.where(:title => 'Photo Gallery').first).present?
+    @gallery = Image.where(:gallery => 1)
   end
 
 end
