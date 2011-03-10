@@ -26,7 +26,8 @@
 		<%= image_tag '/images/crbc_map.jpg', :alt => 'Clackamas River Basin', :id => 'map' %>
 		<ul>
 		<% @labels.each do |label| %>
-			<li>
+			<% idTitle = label.title.gsub(/\s/, '_').downcase %>
+			<li id="<%= idTitle %>">
 				<a href="#"><%=raw label.title %></a>
 				<div><%=raw label.description %></div>
 			</li>
