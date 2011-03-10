@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224022351) do
+ActiveRecord::Schema.define(:version => 20110307021703) do
+
+  create_table "announcements", :force => true do |t|
+    t.string   "title"
+    t.text     "blurb"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "announcements", ["id"], :name => "index_announcements_on_id"
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -41,6 +51,16 @@ ActiveRecord::Schema.define(:version => 20110224022351) do
     t.boolean  "gallery",         :default => false
     t.boolean  "home",            :default => false
   end
+
+  create_table "map_labels", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "map_labels", ["id"], :name => "index_map_labels_on_id"
 
   create_table "page_part_translations", :force => true do |t|
     t.integer  "page_part_id"

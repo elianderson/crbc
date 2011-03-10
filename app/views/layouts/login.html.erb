@@ -17,5 +17,15 @@
       </div>
     </div>
     <%= render :partial => "/admin/javascripts", :locals => {:login => true} %>
+    <script type="text/javascript">
+    	$(function(){
+	
+			if($("#user_new .remember_me").length){
+				$("#user_new .remember_me #user_remember_me").attr("checked", "checked");
+				$("#user_new .remember_me").css("visibility", "hidden");
+			}
+			
+		});
+    </script>
   </body>
 </html>

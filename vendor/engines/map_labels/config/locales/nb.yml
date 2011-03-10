@@ -1,0 +1,20 @@
+nb:
+  plugins:
+    map_labels:
+      title: Map Labels
+  admin:
+    map_labels:
+      index:
+        title: Map Labels
+        create_new: Lag en ny Map Label
+        reorder: Endre rekkefølgen på Map Labels
+        reorder_done: Ferdig å endre rekkefølgen Map Labels
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Map Labels enda. Klikk på "Lag en ny Map Label" for å legge til din første map label.
+      map_label:
+        view_live_html: Vis hvordan denne map label ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne map label
+        delete: Fjern denne map label permanent
+  map_labels:
+    show:
+      other: Andre Map Labels

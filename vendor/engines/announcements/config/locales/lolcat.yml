@@ -1,0 +1,24 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    announcements:
+      title: Announcements
+  admin:
+    announcements:
+      index:
+        title: Announcements
+        create_new: CREATE NEW Announcement
+        reorder: REORDR Announcements
+        reorder_done: DUN REORDERIN Announcements
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Announcements YET. CLICK "CREATE NEW Announcement" 2 ADD UR FURST announcement.
+      announcement:
+        view_live_html: VIEW DIS announcement LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS announcement
+        delete: REMOOV DIS announcement FOREVR
+  announcements:
+    show:
+      other: OTHR Announcements

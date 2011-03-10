@@ -1,0 +1,24 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    map_labels:
+      title: Map Labels
+  admin:
+    map_labels:
+      index:
+        title: Map Labels
+        create_new: Add New Map Label
+        reorder: Reorder Map Labels
+        reorder_done: Done Reordering Map Labels
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Map Labels yet. Click "Add New Map Label" to add your first map label.
+      map_label:
+        view_live_html: View this map label live <br/><em>(opens in a new window)</em>
+        edit: Edit this map label
+        delete: Remove this map label forever
+  map_labels:
+    show:
+      other: Other Map Labels

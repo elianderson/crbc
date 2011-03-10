@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
     @gallery = Image.where(:home => 1).order('id DESC').limit(5)
+    
+    @announcements = Announcement.all
+    
   end
 
   # This action can be accessed normally, or as nested pages.
@@ -31,8 +34,15 @@ class PagesController < ApplicationController
   end
   
   def show_gallery
-  	error_404 unless (@page = Page.where(:title => 'Photo Gallery').first).present?
-  	@gallery = Image.where(:gallery => 1)
+   error_404 unless (@page = Page.where(:title => 'Photo Gallery').first).present?
+   @gallery = Image.where(:gallery => 1)
+  end
+         
+  def show_map
+  	error_404 unless (@page = Page.where(:title => 'Where We Work').first).present?
+  	@labels = MapLabel.all
+    error_404 unless (@page = Page.where(:title => 'Photo Gallery').first).present?
+    @gallery = Image.where(:gallery => 1)
   end
 
 end
