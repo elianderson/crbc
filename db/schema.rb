@@ -106,16 +106,6 @@ ActiveRecord::Schema.define(:version => 20110224022351) do
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
 
-  create_table "people", :force => true do |t|
-    t.string   "f_name"
-    t.string   "l_name"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "people", ["id"], :name => "index_people_on_id"
-
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"
     t.text     "value"
