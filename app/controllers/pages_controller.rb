@@ -35,7 +35,7 @@ class PagesController < ApplicationController
   
   def show_gallery
    error_404 unless (@page = Page.where(:title => 'Photo Gallery').first).present?
-   @gallery = Image.where(:gallery => 1)
+   @gallery = Image.where(:gallery => 1).order('id DESC')
   end
          
   def show_map
