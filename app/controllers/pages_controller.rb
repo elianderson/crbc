@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
     @gallery = Image.where(:home => 1).order('id DESC').limit(5)
-    
+    @person = Person.new
     @announcements = Announcement.all
     
   end

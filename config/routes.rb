@@ -6,6 +6,8 @@ Super::Application.routes.draw do
 	match 'where-we-work' => 'pages#show_map'	
 	match '*section/where-we-work' => 'pages#show_map'	
 	
+	match 'new-person' => 'people#new_person'
+	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110307021703) do
+ActiveRecord::Schema.define(:version => 20110316004301) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -48,8 +48,12 @@ ActiveRecord::Schema.define(:version => 20110307021703) do
     t.datetime "updated_at"
     t.string   "image_uid"
     t.string   "image_ext"
-    t.boolean  "gallery",         :default => false
-    t.boolean  "home",            :default => false
+    t.boolean  "gallery",          :default => false
+    t.boolean  "home",             :default => false
+    t.string   "home_title",       :default => "Title"
+    t.string   "home_description", :default => "Description"
+    t.string   "home_link",        :default => "#none"
+    t.string   "home_link_text",   :default => "Link"
   end
 
   create_table "map_labels", :force => true do |t|
@@ -87,10 +91,10 @@ ActiveRecord::Schema.define(:version => 20110307021703) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
-    t.text     "meta_description"
-    t.string   "browser_title"
-    t.string   "title"
     t.string   "meta_keywords"
+    t.text     "meta_description"
+    t.string   "title"
+    t.string   "browser_title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -125,6 +129,22 @@ ActiveRecord::Schema.define(:version => 20110307021703) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
+
+  create_table "people", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.boolean  "newsletter"
+    t.string   "email"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "people", ["id"], :name => "index_people_on_id"
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,24 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    people:
+      title: People
+  admin:
+    people:
+      index:
+        title: People
+        create_new: Add New Person
+        reorder: Reorder People
+        reorder_done: Done Reordering People
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no People yet. Click "Add New Person" to add your first person.
+      person:
+        view_live_html: View this person live <br/><em>(opens in a new window)</em>
+        edit: Edit this person
+        delete: Remove this person forever
+  people:
+    show:
+      other: Other People

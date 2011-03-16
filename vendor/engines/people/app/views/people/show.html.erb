@@ -1,0 +1,69 @@
+<% content_for :body_content_title do %>
+  <%= @person.first_name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>First Name</h1>
+    <p>
+      <%=raw @person.first_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Last Name</h1>
+    <p>
+      <%=raw @person.last_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Address</h1>
+    <p>
+      <%=raw @person.address %>
+    </p>
+  </section>
+  <section>
+    <h1>City</h1>
+    <p>
+      <%=raw @person.city %>
+    </p>
+  </section>
+  <section>
+    <h1>State</h1>
+    <p>
+      <%=raw @person.state %>
+    </p>
+  </section>
+  <section>
+    <h1>Zip</h1>
+    <p>
+      <%=raw @person.zip %>
+    </p>
+  </section>
+  <section>
+    <h1>Newsletter</h1>
+    <p>
+      <%=raw @person.newsletter %>
+    </p>
+  </section>
+  <section>
+    <h1>Email</h1>
+    <p>
+      <%=raw @person.email %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="people">
+      <% @people.each do |person| %>
+        <li>
+          <%= link_to person.first_name, person_url(person) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
