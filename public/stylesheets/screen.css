@@ -103,20 +103,40 @@ h2 {
 }
 h3 {
 	color: #204a74;
-	font-size: 26px;
+	font-size: 21px;
 	font-style: italic;
+	font-weight: 900;
 	line-height: 1.1667; /* 21px */
 	margin: 0 0 0.6667em; /* 12px */
 }	
 h4 {
-	color: #204a74;
+	color: #5ba1da;
 	font-style: italic;
 	font-size: 18px;
+	font-weight: 900;
 	margin: 0 0 0.8em 0; /* 12px : 0.8em */
 }
-h5, h6 {
-	font-size: 12px;
+h5 {
+	color: #0c3256;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 16px;
 	margin: 0 0 1em;
+}
+h6 {
+	color: #4e95ce;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 14px;
+	margin: 0 0 1em;
+}
+#content img {
+	border: 5px solid #0c3256;
+	margin: 10px;
+}
+#content ol li:before {
+	content: url(/images/icons/ul-bullet.png);
+}
+#content ul li:before {
+	content: url(/images/icons/ul-bullet.png);
 }
 p {
 	color: #2b2b2b;
@@ -195,6 +215,10 @@ blockquote p {
 	padding: 40px 0 15px;
 	position: relative;
 	width: 940px;
+}
+#content .banner-inner img {
+	border: 0;
+	margin: 0;
 }
 .banner-inner .i {
 	border: 5px solid #204a74;

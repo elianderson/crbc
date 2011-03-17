@@ -25,9 +25,11 @@
 		</div>
 	</div>
 </div><!-- END: wrap header -->
-	
+
+<div id="content">
 	<!-- Template Content -->
 	<%= yield %>
+</div>
 
 <div id="footer">
 	<div class="i group">
@@ -81,8 +83,8 @@
 	</div>
 </div><!-- END: footer -->
 
-<%= javascript_include_tag 'jquery' %>
-<%= @page[:link_url] == '/' ? javascript_include_tag 'jquery.cycle.min' : '' %>
+<script src="/javascripts/jquery.js"></script>
+<%= @page[:link_url] == '/' ? javascript_include_tag('jquery.cycle.min') : '' %>
 <script src="/javascripts/application.js"></script>
 </body>
 </html>
