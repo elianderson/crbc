@@ -35,21 +35,7 @@
 	<div class="i group">
 		<div class="col col6">
 			<h4>Sign-up For Our Newsletter</h4>
-			
-			<!--form action="" method="post" id="signup" class="group">
-				<label for="email">Email</label>
-				<input type="text" name="email" id="email" />
-				<button id="submit">Send</button>
-			</form-->
-			<!--form accept-charset="UTF-8" action="/new-person" id="signup" method="post">
-				<input name="utf8" type="hidden" value="&#x2713;" />
-				<input name="authenticity_token" type="hidden" value="DQj2L0chQ3y9hpB9NxcWlppoqyWxJXA+vP5JYEhy+zU=" />  
-  				<input name="person[newsletter]" type="hidden" value="1" />
-  				<label for="person_email">Email</label>    
-  				<input id="person_email" name="person[email]" size="30" type="text" />  
-				<input class="wymupdate button" id="submit_button" type="submit" value="Send" />
-			</form-->
-			<%= form_for @person, :html => {:multipart => true} do |f| %>
+			<%= form_for @person, :action => '/newsletter',:html => {:multipart => true} do |f| %>
 			  <div class="field">
 			    <%= f.label 'Email' %><br />
 			    <%= f.text_field :email %>

@@ -1,12 +1,16 @@
 Super::Application.routes.draw do
 
+	resources :people
+
 	match 'photo-gallery' => 'pages#show_gallery'	
 	match '*section/photo-gallery' => 'pages#show_gallery'	
 	
 	match 'where-we-work' => 'pages#show_map'	
 	match '*section/where-we-work' => 'pages#show_map'	
 	
-	match 'new-person' => 'people#new_person'
+	match 'new-person' => 'person#newsletter'
+	
+	match '/people' => redirect("/home")
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.

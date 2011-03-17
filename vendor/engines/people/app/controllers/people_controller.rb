@@ -17,12 +17,17 @@ class PeopleController < ApplicationController
     present(@page)
   end
 
-  def new_person
-  	Person.new
+  def create
+  	@person = Person.new(params[:person])
   	
-    format.html # new.html.erb
-      format.xml  { render :xml => @product }
+  	respond_to do |format|
+      if @person.save
+       redirect_to "/"
+      else
+        redirect_to "/about"
+      end
     end
+  	
   	#redirect_to "/"
   end
 
