@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
-	
+  before_filter :new_person
+
   # This action is usually accessed with the root path, normally '/'
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
     @gallery = Image.where(:home => 1).order('id DESC').limit(5)
-    @person = Person.new
     @announcements = Announcement.all
     
   end
@@ -22,7 +22,6 @@ class PagesController < ApplicationController
   def show
     # Find the page by the newer 'path' or fallback to the page's id if no path.
     @page = Page.find(params[:path] ? params[:path].to_s.split('/').last : params[:id])
-    @person = Person.new
     @announcements = Announcement.all
 
     if @page.try(:live?) or (refinery_user? and current_user.authorized_plugins.include?("refinery_pages"))
@@ -45,4 +44,9 @@ class PagesController < ApplicationController
   	@labels = MapLabel.all
   end
 
+protected
+
+  def new_person
+  	@person = Person.new
+  end
 end

@@ -19,16 +19,9 @@ class PeopleController < ApplicationController
 
   def create
   	@person = Person.new(params[:person])
+  	@person.save
+  	redirect_to "/thank-you-for-signing-up-for-our-newsletter"
   	
-  	respond_to do |format|
-      if @person.save
-       redirect_to "/"
-      else
-        redirect_to "/about"
-      end
-    end
-  	
-  	#redirect_to "/"
   end
 
 protected

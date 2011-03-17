@@ -10,7 +10,6 @@ Super::Application.routes.draw do
 	
 	match 'new-person' => 'person#newsletter'
 	
-	match '/people' => redirect("/home")
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.
