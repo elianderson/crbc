@@ -308,16 +308,16 @@ button[disabled] {
 }
 
 /* - forms: signup - */
-#signup {
+#new_person {
 	margin-bottom: 30px;
 }
-#signup label {
+#new_person label {
 	padding: 9px 0 0;
 }
-#signup input[type=text], #signup button {
+#new_person input[type=text], #signup button {
 	float: left;
 }
-#signup button {
+#new_person #person_submit {
 	color: #fff;
 	background: #398acc;
 	border: 1px solid #204a74;
@@ -325,7 +325,7 @@ button[disabled] {
 	text-transform: uppercase;
 	width: 120px;
 }
-#signup input[type=text] {
+#new_person input[type=text] {
 	height: 23px;
 	margin-right: 5px;
 	text-indent: 5px;

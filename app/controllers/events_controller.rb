@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
   before_filter :find_all_events
   before_filter :find_page
+  before_filter :new_person
 
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
@@ -25,6 +26,10 @@ protected
 
   def find_page
     @page = Page.find_by_link_url("/events")
+  end
+
+  def new_person
+  	@person = Person.new
   end
 
 end

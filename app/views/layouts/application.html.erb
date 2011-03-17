@@ -35,18 +35,17 @@
 	<div class="i group">
 		<div class="col col6">
 			<h4>Sign-up For Our Newsletter</h4>
-			<%= form_for @person, :action => '/newsletter',:html => {:multipart => true} do |f| %>
+			<%= form_for @person, :id => 'signup', :html => {:multipart => true} do |f| %>
 			  <div class="field">
-			    <%= f.label 'Email' %><br />
+			    <%= f.label 'Email' %>
 			    <%= f.text_field :email %>
 			  </div>
 			  <div class="field">
-			    
 			    <%= f.hidden_field :newsletter, :value => '1' %>
 			  </div>
 			 
 			  <div class="actions">
-			    <%= f.submit %>
+			    <%= f.submit :value => 'Send', :class => 'group'%>
 			  </div>
 			<% end %>
 
