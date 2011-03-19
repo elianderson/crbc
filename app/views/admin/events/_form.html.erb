@@ -58,7 +58,13 @@
       </div>
     </div>
   </div>
-  
+  <%if @att %>
+	  <ul>
+	  <% @att.each do |p|%>
+	  	<li><%= p.email %></li>
+	  <% end %>
+	  </ul>
+  <% end %>
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
                 :f => f,

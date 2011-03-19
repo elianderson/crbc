@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   before_filter :find_all_events
+  before_filter :find_all_people
   before_filter :find_page
   before_filter :new_person
 
@@ -30,6 +31,10 @@ protected
 
   def new_person
   	@person = Person.new
+  end
+  
+  def find_all_people
+  	@people = Person.all
   end
 
 end

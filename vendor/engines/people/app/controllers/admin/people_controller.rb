@@ -16,6 +16,7 @@ module Admin
   
   def edit
     @person = Person.find(params[:id])
+	@test = "this is work"
 
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @person in the line below:

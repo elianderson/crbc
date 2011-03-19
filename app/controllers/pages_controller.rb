@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_filter :new_person
-
+  before_filter :find_all_people
   # This action is usually accessed with the root path, normally '/'
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
@@ -48,5 +48,9 @@ protected
 
   def new_person
   	@person = Person.new
+  end
+  
+  def find_all_people
+  	@people = Person.all
   end
 end

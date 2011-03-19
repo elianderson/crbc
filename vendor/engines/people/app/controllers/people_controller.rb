@@ -20,9 +20,18 @@ class PeopleController < ApplicationController
   end
 
   def create
-  	@person = Person.new(params[:person])
-  	@person.save
-  	redirect_to "/thank-you-for-signing-up-for-our-newsletter"
+  	exist_check = Person.where(:email => params[:person][:email])
+  	
+  	if exist_check.exists?
+  		@peep = Person.where(:email => params[:person][:email])
+  		ids = params[:person][:event_ids]
+  		@peep.update_all()
+	  	redirect_to "/about"
+  	else
+	  	@person = Person.new(params[:person])
+	  	@person.save
+	  	redirect_to "/thank-you-for-signing-up-for-our-newsletter"	
+  	end
   	
   end
 
