@@ -42,21 +42,20 @@ var crbc = function () {
 	}
 	
 	function twitterFeed() {
-		var screen_name = "ClackamasRiver",
-			twitter_url = "http://search.twitter.com/search.json";
-			
-		$.ajax({
-			type: "GET",
-			url: twitter_url,
-			data: "q=user&3A" + screen_name,
-			error: function (jqXHR, textStatus, errorThrown) {
-				console.log("errorThrown: ", errorThrown);
-				console.log("textStatus: ", textStatus);
-				console.log("jqXHR: ", jqXHR);
-			},
-			success: function (data, textStatus, jqXHR) {
-				console.log("Log: ", data);
-			}
+		var twURL = "http://search.twitter.com/search.json?q=ClackamasRiver&rpp=3&page=1&show_user=true&callback=?",
+			tweet;
+		
+		$.getJSON(twURL, function( data ) {
+			$.each(data.results, function( index, item ) {
+				tweet = "";
+				tweet += '<li><p><img src="' + item.profile_image_url + '" alt="' + item.from_user + '" />';
+				tweet += item.text.linkify();
+				tweet += '<span class="time"> ' + relativeTime(item.created_at) + '</span>';
+				tweet += '<span class="author"> by: <a href="http://twitter.com/' + item.from_user + '" target="_blank">';
+				tweet += '@' + item.from_user + '</a>' + '</span>';
+				tweet += '</p></li>';
+				$tweetlist.append(tweet);
+			});
 		});
 	}
 
@@ -69,6 +68,11 @@ var crbc = function () {
 
 }();
 
+/*
+|***************************************************************
+| EVENTS / FUNCTIONS
+|***************************************************************
+*/
 $(window).load(function () {
 	
 	// Init
@@ -82,3 +86,30 @@ $(window).load(function () {
 	});
 	
 });
+
+String.prototype.linkify = function() {
+	return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&\?\/.=]+/, function(m) {
+		return m.link(m);
+	});
+};
+
+function relativeTime(time_value) {
+	var parsed_date = Date.parse(time_value);
+	var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+	var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+	if(delta < 60) {
+		return "less than a minute ago";
+	} else if(delta < 120) {
+		return "about a minute ago";
+	} else if(delta < (45*60)) {
+		return (parseInt(delta / 60)).toString() + " minutes ago";
+	} else if(delta < (90*60)) {
+		return "about an hour ago";
+	} else if(delta < (24*60*60)) {
+		return "about " + (parseInt(delta / 3600)).toString() + " hours ago";
+	} else if(delta < (48*60*60)) {
+		return "1 day ago";
+	} else {
+		return (parseInt(delta / 86400)).toString() + " days ago";
+	}
+}
