@@ -1,3 +1,4 @@
+<h2><%= @test %>ing</h2>
 <%= form_for [:admin, @person] do |f| -%>
   <%= render :partial => "/shared/admin/error_messages", :locals => {
           :object => @person,
@@ -43,6 +44,8 @@
     <%= f.label :email -%>
     <%= f.text_field :email -%>
   </div>
+  
+
   
   <%= render :partial => "/shared/admin/form_actions",
               :locals => {
