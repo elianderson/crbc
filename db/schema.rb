@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110310022652) do
+=======
+ActiveRecord::Schema.define(:version => 20110316004301) do
+>>>>>>> efb77c1d4ff0fdadee7f621a8833051de1a2f8c3
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -48,12 +52,21 @@ ActiveRecord::Schema.define(:version => 20110310022652) do
     t.datetime "updated_at"
     t.string   "image_uid"
     t.string   "image_ext"
+<<<<<<< HEAD
     t.string   "gallery"
     t.string   "home"
     t.string   "home_title",       :default => "Title"
     t.string   "home_link",        :default => "#link"
     t.string   "home_link_text",   :default => "Link Text"
     t.string   "home_description", :default => "Image Description"
+=======
+    t.boolean  "gallery",          :default => false
+    t.boolean  "home",             :default => false
+    t.string   "home_title",       :default => "Title"
+    t.string   "home_description", :default => "Description"
+    t.string   "home_link",        :default => "#none"
+    t.string   "home_link_text",   :default => "Link"
+>>>>>>> efb77c1d4ff0fdadee7f621a8833051de1a2f8c3
   end
 
   create_table "map_labels", :force => true do |t|
@@ -91,10 +104,17 @@ ActiveRecord::Schema.define(:version => 20110310022652) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
+<<<<<<< HEAD
     t.string   "browser_title"
     t.string   "meta_keywords"
     t.text     "meta_description"
     t.string   "title"
+=======
+    t.string   "meta_keywords"
+    t.text     "meta_description"
+    t.string   "title"
+    t.string   "browser_title"
+>>>>>>> efb77c1d4ff0fdadee7f621a8833051de1a2f8c3
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -129,6 +149,22 @@ ActiveRecord::Schema.define(:version => 20110310022652) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
+
+  create_table "people", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.boolean  "newsletter"
+    t.string   "email"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "people", ["id"], :name => "index_people_on_id"
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"

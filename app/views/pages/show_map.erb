@@ -22,16 +22,27 @@
 		</div>
 		
 		<%= render :partial => "/shared/content_page" %>
+	</div>
+	
+	<div id="map-container" class="i pad group">
+		<div class="col col8">
+			<ul id="map">
+				<% @labels.each do |label| %>
+					<% idTitle = label.title.gsub(/\s/, '_').downcase %>
+					<li id="<%= idTitle %>">
+						<a href="#"><%=raw label.title %></a>
+					</li>
+				<% end %>
+			</ul>
+		</div>
 		
-		<%= image_tag '/images/crbc_map.jpg', :alt => 'Clackamas River Basin', :id => 'map' %>
-		<ul>
-		<% @labels.each do |label| %>
-			<% idTitle = label.title.gsub(/\s/, '_').downcase %>
-			<li id="<%= idTitle %>">
-				<a href="#"><%=raw label.title %></a>
-				<div><%=raw label.description %></div>
-			</li>
-		<% end %>
-		</ul>
+		<div id="map-info" class="col col4 last">
+			<% @labels.each do |label| %>
+				<% titleClass = label.title.gsub(/\s/, '_').downcase %>
+				<div class="<%= titleClass %>">
+					<%=raw label.description %>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>

@@ -35,12 +35,20 @@
 	<div class="i group">
 		<div class="col col6">
 			<h4>Sign-up For Our Newsletter</h4>
-			
-			<form action="" method="post" id="signup" class="group">
-				<label for="email">Email</label>
-				<input type="text" name="email" id="email" />
-				<button id="submit">Send</button>
-			</form>
+			<%= form_for @person, :id => 'signup', :html => {:multipart => true} do |f| %>
+			  <div class="field">
+			    <%= f.label 'Email' %>
+			    <%= f.text_field :email %>
+			  </div>
+			  <div class="field">
+			    <%= f.hidden_field :newsletter, :value => '1' %>
+			  </div>
+			 
+			  <div class="actions">
+			    <%= f.submit :value => 'Send', :class => 'group'%>
+			  </div>
+			<% end %>
+
 			
 			<ul class="icon nav">
 				<li class="tw"><a href="">Follow Us on Twitter &raquo;</a></li>
