@@ -1,4 +1,4 @@
-<h2><%= @test %>ing</h2>
+<h2><%= debug @events %>ing</h2>
 <%= form_for [:admin, @person] do |f| -%>
   <%= render :partial => "/shared/admin/error_messages", :locals => {
           :object => @person,

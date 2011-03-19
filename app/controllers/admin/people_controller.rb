@@ -1,31 +1,33 @@
 module Admin
   class PeopleController < Admin::BaseController
 
-	before_filter :find_all_events
-
     crudify :person,
             :title_attribute => 'first_name'
+
+	#before_filter :find_all_events
 
     def index
       search_all_people if searching?
       paginate_all_people
-      
+	  @events = Event.find(:all, :order => "position ASC")
+	  @test = "this is work"
       render :partial => 'people' if request.xhr?
     end
   end
   
-  def edit
+  def update
     @person = Person.find(params[:id])
-
+	#@events = Event.find(:all, :order => "position ASC")
+	@test = "this is work"
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @person in the line below:
     present(@page)
   end
   
-  private
+  protected
   
   def find_all_events
-    @events = Event.all
+    @events = Event.find(:all, :order => "position ASC")
   end
   
 end

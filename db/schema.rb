@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110319173206) do
+ActiveRecord::Schema.define(:version => 20110316004301) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -37,11 +37,6 @@ ActiveRecord::Schema.define(:version => 20110319173206) do
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
-
-  create_table "events_people", :id => false, :force => true do |t|
-    t.integer "event_id"
-    t.integer "person_id"
-  end
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
