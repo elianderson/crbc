@@ -47,14 +47,18 @@
 	
 	<div class="col box-light events">
 		<h3>Next Events</h3>
-		<a href="">Learn More &amp; <abbr title="Request for Response">RSVP</abbr> &raquo;</a>
+		<% @events_widget.each do |eve|%>
+			<div>
+				<h6><%= raw(eve.title) %></h6>
+				<a href="/events/<%= eve.id%>">Learn More &amp; <abbr title="Request for Response">RSVP</abbr> &raquo;</a>
+			</div>
+		<% end %>
 	</div>
 	
 	<div class="col box-spot blog last">
 		<h3>Announcements</h3>
-		<% @announcements.each do |ann|%>
+		<% @announcements_widget.each do |ann|%>
 			<%= raw(ann.blurb) %>
 		<% end %>
-		<a href="">Read More &raquo;</a>
 	</div>
 </div>

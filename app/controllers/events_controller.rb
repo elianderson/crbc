@@ -6,6 +6,9 @@ class EventsController < ApplicationController
   before_filter :load_attendees
 
   def index
+    @announcements_widget = Announcement.limit(5)
+    @events_widget = Event.limit(5)
+    
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
     present(@page)
@@ -13,7 +16,9 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-
+    @announcements_widget = Announcement.limit(5)
+    @events_widget = Event.limit(5)
+    
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
     present(@page)
