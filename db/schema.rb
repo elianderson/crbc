@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110307021703) do
+ActiveRecord::Schema.define(:version => 20110310022652) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -48,8 +48,12 @@ ActiveRecord::Schema.define(:version => 20110307021703) do
     t.datetime "updated_at"
     t.string   "image_uid"
     t.string   "image_ext"
-    t.boolean  "gallery",         :default => false
-    t.boolean  "home",            :default => false
+    t.boolean  "gallery",          :default => false
+    t.boolean  "home",             :default => false
+    t.string   "home_title",       :default => "Title"
+    t.string   "home_link",        :default => "#link"
+    t.string   "home_link_text",   :default => "Link Text"
+    t.string   "home_description", :default => "Image Description"
   end
 
   create_table "map_labels", :force => true do |t|
