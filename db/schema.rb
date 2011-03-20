@@ -10,11 +10,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20110310022652) do
-=======
-ActiveRecord::Schema.define(:version => 20110316004301) do
->>>>>>> efb77c1d4ff0fdadee7f621a8833051de1a2f8c3
+ActiveRecord::Schema.define(:version => 20110319234333) do
+
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -25,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20110316004301) do
   end
 
   add_index "announcements", ["id"], :name => "index_announcements_on_id"
+
+  create_table "attendees", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -52,21 +57,12 @@ ActiveRecord::Schema.define(:version => 20110316004301) do
     t.datetime "updated_at"
     t.string   "image_uid"
     t.string   "image_ext"
-<<<<<<< HEAD
-    t.string   "gallery"
-    t.string   "home"
-    t.string   "home_title",       :default => "Title"
-    t.string   "home_link",        :default => "#link"
-    t.string   "home_link_text",   :default => "Link Text"
-    t.string   "home_description", :default => "Image Description"
-=======
     t.boolean  "gallery",          :default => false
     t.boolean  "home",             :default => false
     t.string   "home_title",       :default => "Title"
     t.string   "home_description", :default => "Description"
     t.string   "home_link",        :default => "#none"
     t.string   "home_link_text",   :default => "Link"
->>>>>>> efb77c1d4ff0fdadee7f621a8833051de1a2f8c3
   end
 
   create_table "map_labels", :force => true do |t|
@@ -104,17 +100,10 @@ ActiveRecord::Schema.define(:version => 20110316004301) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
-<<<<<<< HEAD
-    t.string   "browser_title"
-    t.string   "meta_keywords"
-    t.text     "meta_description"
-    t.string   "title"
-=======
     t.string   "meta_keywords"
     t.text     "meta_description"
     t.string   "title"
     t.string   "browser_title"
->>>>>>> efb77c1d4ff0fdadee7f621a8833051de1a2f8c3
     t.datetime "created_at"
     t.datetime "updated_at"
   end

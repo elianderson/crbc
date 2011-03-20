@@ -1,1 +1,6 @@
 <%= render :partial => "form" %>
+<ul>
+<% @event.attendees.each do |att| %>
+	<li><%= att.name %> - <%= att.email%> - <%= link_to 'Destroy', att, :confirm => 'Are you sure?', :method => :delete %></li>
+<% end %>
+</ul>

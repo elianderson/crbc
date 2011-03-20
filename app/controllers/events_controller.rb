@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   before_filter :find_all_events
   before_filter :find_page
   before_filter :new_person
+  before_filter :load_attendees
 
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
@@ -30,6 +31,11 @@ protected
 
   def new_person
   	@person = Person.new
+  end
+  
+  def load_attendees
+    @attendees = Attendee.all
+  	@attendee = Attendee.new
   end
 
 end

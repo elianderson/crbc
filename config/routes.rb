@@ -1,5 +1,7 @@
 Super::Application.routes.draw do
 
+  resources :attendees
+
 	resources :people
 
 	match 'photo-gallery' => 'pages#show_gallery'	
