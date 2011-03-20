@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
+  before_filter :new_person
 
   # This action is usually accessed with the root path, normally '/'
   def home
     error_404 unless (@page = Page.where(:link_url => '/').first).present?
     @gallery = Image.where(:home => 1).order('id DESC').limit(5)
-    
-    @announcements = Announcement.all
-    
+    @announcements_widget = Announcement.limit(5)
+    @events_widget = Event.limit(5)
   end
 
   # This action can be accessed normally, or as nested pages.
@@ -22,7 +22,9 @@ class PagesController < ApplicationController
   def show
     # Find the page by the newer 'path' or fallback to the page's id if no path.
     @page = Page.find(params[:path] ? params[:path].to_s.split('/').last : params[:id])
-
+    @announcements_widget = Announcement.limit(5)
+    @events_widget = Event.limit(5)
+	
     if @page.try(:live?) or (refinery_user? and current_user.authorized_plugins.include?("refinery_pages"))
       # if the admin wants this to be a "placeholder" page which goes to its first child, go to that instead.
       if @page.skip_to_first_child and (first_live_child = @page.children.order('lft ASC').where(:draft=>false).first).present?
@@ -43,4 +45,9 @@ class PagesController < ApplicationController
   	@labels = MapLabel.all
   end
 
+protected
+
+  def new_person
+  	@person = Person.new
+  end
 end

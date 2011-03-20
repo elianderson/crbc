@@ -1,0 +1,24 @@
+<div class="col social">
+	<div class="box-light twitter">
+		<h3>Tweet, Tweet</h3>
+		<ul class="list tweets"></ul>
+		<a href="">Follow Us &raquo;</a>
+	</div>
+	
+	<div class="box-light events">
+		<h3>Next Events</h3>
+		<% @events_widget.each do |eve|%>
+			<div>
+				<h6><%= raw(eve.title) %></h6>
+				<a href="/events/<%= eve.id%>">Learn More &amp; <abbr title="Request for Response">RSVP</abbr> &raquo;</a>
+			</div>
+		<% end %>
+	</div>
+	
+	<div class="box-spot blog">
+		<h3>Announcements</h3>
+		<% @announcements_widget.each do |ann|%>
+			<%= raw(ann.blurb) %>
+		<% end %>
+	</div>
+</div>

@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20110310022652) do
 
   add_index "announcements", ["id"], :name => "index_announcements_on_id"
 
+  create_table "attendees", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", :force => true do |t|
     t.string   "title"
     t.datetime "date_start"
@@ -91,10 +99,10 @@ ActiveRecord::Schema.define(:version => 20110310022652) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
-    t.text     "meta_description"
-    t.string   "browser_title"
-    t.string   "title"
     t.string   "meta_keywords"
+    t.text     "meta_description"
+    t.string   "title"
+    t.string   "browser_title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -129,6 +137,22 @@ ActiveRecord::Schema.define(:version => 20110310022652) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
+
+  create_table "people", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.boolean  "newsletter"
+    t.string   "email"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "people", ["id"], :name => "index_people_on_id"
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"

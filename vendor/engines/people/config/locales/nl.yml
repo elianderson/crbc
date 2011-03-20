@@ -1,0 +1,20 @@
+nl:
+  plugins:
+    people:
+      title: People
+  admin:
+    people:
+      index:
+        title: People
+        create_new: Maak een nieuwe Person
+        reorder: Wijzig de volgorde van de People
+        reorder_done: Klaar met het wijzingen van de volgorde van de People
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen People. Druk op 'Maak een nieuwe Person' om de eerste aan te maken.
+      person:
+        view_live_html: Bekijk deze person op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze person
+        delete: Verwijder deze person voor eeuwig
+  people:
+    show:
+      other: Andere People

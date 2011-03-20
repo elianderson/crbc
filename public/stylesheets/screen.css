@@ -103,20 +103,40 @@ h2 {
 }
 h3 {
 	color: #204a74;
-	font-size: 26px;
+	font-size: 21px;
 	font-style: italic;
+	font-weight: 900;
 	line-height: 1.1667; /* 21px */
 	margin: 0 0 0.6667em; /* 12px */
 }	
 h4 {
-	color: #204a74;
+	color: #5ba1da;
 	font-style: italic;
 	font-size: 18px;
+	font-weight: 900;
 	margin: 0 0 0.8em 0; /* 12px : 0.8em */
 }
-h5, h6 {
-	font-size: 12px;
+h5 {
+	color: #0c3256;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 16px;
 	margin: 0 0 1em;
+}
+h6 {
+	color: #4e95ce;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 14px;
+	margin: 0 0 1em;
+}
+#content img {
+	border: 5px solid #0c3256;
+	margin: 10px;
+}
+#content ol li:before {
+	content: url(/images/icons/ul-bullet.png);
+}
+#content ul li:before {
+	content: url(/images/icons/ul-bullet.png);
 }
 p {
 	color: #2b2b2b;
@@ -195,6 +215,10 @@ blockquote p {
 	padding: 40px 0 15px;
 	position: relative;
 	width: 940px;
+}
+#content .banner-inner img {
+	border: 0;
+	margin: 0;
 }
 .banner-inner .i {
 	border: 5px solid #204a74;
@@ -308,16 +332,16 @@ button[disabled] {
 }
 
 /* - forms: signup - */
-#signup {
+#new_person {
 	margin-bottom: 30px;
 }
-#signup label {
+#new_person label {
 	padding: 9px 0 0;
 }
-#signup input[type=text], #signup button {
+#new_person input[type=text], #signup button {
 	float: left;
 }
-#signup button {
+#new_person #person_submit {
 	color: #fff;
 	background: #398acc;
 	border: 1px solid #204a74;
@@ -325,7 +349,7 @@ button[disabled] {
 	text-transform: uppercase;
 	width: 120px;
 }
-#signup input[type=text] {
+#new_person input[type=text] {
 	height: 23px;
 	margin-right: 5px;
 	text-indent: 5px;
@@ -651,6 +675,30 @@ button[disabled] {
 	background-position: right -60px;
 }
 
+/* - display: twitter - */
+.tweets {
+	border-bottom: 1px dotted #959595;
+	list-style: none;
+	margin: 0 0 10px;
+	padding: 0 0 10px;
+}
+.tweets a {
+	text-transform: none;
+}
+.tweets li {
+	padding: 5px;
+}
+#content .tweets li:before {
+	content: '';
+}
+.tweets li p {
+	margin: 0;
+}
+#content .tweets li p img {
+	float: left;
+	margin: 0px 7px 0px 0px;
+}
+
 
 /* -- footer -- */
 #footer {
@@ -713,4 +761,260 @@ h3, h4 {
 /* -- contain floats -- */
 .group:after {
 	clear: both; content: '.'; display: block; height: 0; visibility: hidden;
+}
+
+
+/* -- added styles -- */
+
+/* - added: what we do - */
+ul li.content:before {
+	content: url(/images/icons/ul-bullet.png);
+    vertical-align: middle;
+}
+
+/* - added: streamside enhancement - */
+h5 {
+	color: #0c3256;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 16px;
+}
+
+/* - added: 15 easy steps - */
+body.inner {
+	counter-reset: section;
+}
+h5.tips {
+	color: #0c3256;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 16px;
+}
+h5.tips:before {
+    color: #4e95ce;
+    counter-increment: section;
+    content: counter(section) '. ';
+    font-size: 18px;
+    font-style: bold italic;
+}
+
+/* - added: our staff - */
+h5 {
+	color: #0c3256;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 16px;
+	margin: 10px 0px 0px 0px;
+}
+h6 {
+	color: #4e95ce;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 14px;
+    margin: 0px;
+}
+
+/* - added: contact - */
+h5 {
+	color: #0c3256;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 16px;
+	margin: 10px 0px 0px 0px;
+}
+h6 {
+	color: #4e95ce;
+	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
+	font-size: 14px;
+	margin: 0px;
+}
+
+/* - added: photo gallery - */
+#body_content_title {
+	width: 900px;
+	margin: 0 auto;
+	padding: 10px 0;
+	text-align: left;
+}
+div.content {
+	/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
+	display: none;
+	position: relative;
+}
+div.content a, div.navigation a {
+	text-decoration: none;
+	color: #204A74;
+}
+div.content a:focus, div.content a:hover, div.content a:active {
+	text-decoration: underline;
+}
+div.controls {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 900px;
+}
+div.controls a {
+
+}
+div.ss-controls {
+	position: absolute;
+	top: 0; 
+	left: 0;
+	padding-left: 5px;
+}
+div.nav-controls {
+	position: absolute;
+	top: 0; 
+	right: 0;
+	padding-right: 5px;
+	width: 500px;
+}
+div.nav-controls a.prev {
+	position: absolute;
+	top: 0; 
+	left: 0;
+}
+div.nav-controls a.next {
+	position: absolute;
+	top: 0; 
+	right: 5px;
+}
+div.slideshow-container {
+	position: relative;
+	height: 550px; /* This should be set to be at least the height of the largest image in the slideshow */
+	width: 900px;
+	margin: 0 auto;
+	background: #FFF;
+	
+	-moz-box-shadow: #000 0 0 3px;
+	-webkit-box-shadow: #000 0 0 3px;
+	box-shadow: #000 0 0 3px;
+}
+div.loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('loader.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 550px;
+	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+}
+div.slideshow {
+
+}
+div.slideshow span.image-wrapper {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+div.slideshow a.advance-link {
+	display: block;
+	width: 550px;
+	height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+	line-height: 502px; /* This should be set to be at least the height of the largest image in the slideshow */
+	text-align: center;
+}
+div.slideshow a.advance-link:hover, div.slideshow a.advance-link:active, div.slideshow a.advance-link:visited {
+	text-decoration: none;
+}
+div.slideshow img {
+	vertical-align: middle;
+	border: 1px solid ;
+}
+div.caption-container {
+	position: relative;
+	clear: left;
+	height: 75px;
+}
+span.image-caption {
+	display: block;
+	position: absolute;
+	width: 550px;
+	top: 0;
+	left: 0;
+}
+div.caption {
+	padding: 12px;
+}
+div.image-title {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+div.image-desc {
+	line-height: 1.3em;
+	padding-top: 12px;
+	width:500px;
+	margin-left:598px;
+	font-size:1.25em;
+	text-align:center;
+}
+div.navigation {
+	/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
+}
+ul.thumbs {
+	position: absolute;
+	top: 55px;
+	left: 20px;
+	margin: 0;
+	padding: 0;
+	width: 350px;
+}
+ul.thumbs li {
+	float: left;
+	padding: 0;
+	margin: 5px 10px 5px 0;
+	list-style: none;
+}
+a.thumb {
+	padding: 2px;
+	display: block;
+	border: 1px solid #ccc;
+	width:100px;
+	height:100px;
+}
+ul.thumbs li.selected a.thumb {
+	background: #204A74;
+}
+a.thumb:focus {
+	outline: none;
+}
+ul.thumbs img {
+	border: none;
+	display: block;
+	margin:0 auto;
+}
+div.pagination {
+	clear: both;
+}
+div.top {
+	position: absolute;
+	top: 30px;
+	left:20px;
+}
+div.bottom {
+	position: absolute;
+	bottom: 10px;
+	left:20px;
+}
+div.top a, div.top span, div.bottom a, div.bottom span {
+	display: block;
+	float: left;
+}
+div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
+	display: block;
+	margin-right: 2px;
+	padding: 4px 7px 2px 7px;
+	border: 1px solid #204A74;
+}
+div.pagination a:hover {
+	background-color: #5BA1DA;
+	text-decoration: none;
+}
+div.pagination span.current {
+	font-weight: bold;
+	background-color: #5BA1DA;
+	border-color: #204A74;
+	color: #fff;
+}
+div.pagination span.ellipsis {
+	border: none;
+	padding: 5px 0 3px 2px;
 }

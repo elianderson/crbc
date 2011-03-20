@@ -1,0 +1,24 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    people:
+      title: People
+  admin:
+    people:
+      index:
+        title: People
+        create_new: CREATE NEW Person
+        reorder: REORDR People
+        reorder_done: DUN REORDERIN People
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO People YET. CLICK "CREATE NEW Person" 2 ADD UR FURST person.
+      person:
+        view_live_html: VIEW DIS person LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS person
+        delete: REMOOV DIS person FOREVR
+  people:
+    show:
+      other: OTHR People

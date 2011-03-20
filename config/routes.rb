@@ -1,10 +1,17 @@
 Super::Application.routes.draw do
 
+  resources :attendees
+
+	resources :people
+
 	match 'photo-gallery' => 'pages#show_gallery'	
 	match '*section/photo-gallery' => 'pages#show_gallery'	
 	
 	match 'where-we-work' => 'pages#show_map'	
 	match '*section/where-we-work' => 'pages#show_map'	
+	
+	match 'new-person' => 'person#newsletter'
+	
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.

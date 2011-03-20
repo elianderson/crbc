@@ -1,0 +1,20 @@
+nb:
+  plugins:
+    people:
+      title: People
+  admin:
+    people:
+      index:
+        title: People
+        create_new: Lag en ny Person
+        reorder: Endre rekkefølgen på People
+        reorder_done: Ferdig å endre rekkefølgen People
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen People enda. Klikk på "Lag en ny Person" for å legge til din første person.
+      person:
+        view_live_html: Vis hvordan denne person ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne person
+        delete: Fjern denne person permanent
+  people:
+    show:
+      other: Andre People

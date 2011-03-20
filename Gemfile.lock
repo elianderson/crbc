@@ -4,6 +4,7 @@ PATH
     refinerycms-announcements (1.0)
     refinerycms-events (1.0)
     refinerycms-map_labels (1.0)
+    refinerycms-people (1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -204,6 +205,7 @@ DEPENDENCIES
   refinerycms-generators (~> 0.9)
   refinerycms-i18n (~> 0.9)
   refinerycms-map_labels (= 1.0)!
+  refinerycms-people (= 1.0)!
   refinerycms-theming (~> 0.9.9)
   rspec-rails (= 2.3)
   ruby-prof
