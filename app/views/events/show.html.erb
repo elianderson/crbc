@@ -55,6 +55,35 @@
   </section>
 <% end %>
 
+<%= form_for(@attendee) do |f| %>
+  <% if @attendee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
+
+      <ul>
+      <% @attendee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <%= f.hidden_field :event_id, :value => @event.id %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 <% content_for :body_content_right do %>
   <aside>
     <h2><%= t('.other') %></h2>
