@@ -11,6 +11,8 @@ var crbc = function () {
 	// Global
 	var $slideshow = $("#slideshow"),
 		$tweetlist = $(".tweets");
+		$map = $("#map");
+		$mapInfo = $("#map-info");
 
 /*
 ** INITIALIZE
@@ -24,6 +26,11 @@ var crbc = function () {
 		// Check for twitter list
 		if ( $tweetlist.length ) {
 			twitterFeed();
+		}
+		
+		//Check for map page info
+		if ( $map.length ) {
+			mapInfo();
 		}
 	}
 	
@@ -56,6 +63,27 @@ var crbc = function () {
 				tweet += '</p></li>';
 				$tweetlist.append(tweet);
 			});
+		});
+	}
+	
+	function mapInfo() {
+		//initialize map functionality in javascript
+		$mapInfo.children("div").css({
+			'position': 'absolute',
+			'top': 0,
+			'left': 0,
+			'display': 'none'
+		});
+		$mapInfo.children(":first").css('display', 'block');
+		$map.children(":first").children('a').addClass('map_selected');
+		
+		//implement clicking on map labels and displaying descriptions
+		$map.children('li').click(function() {
+			var mapId = $(this).attr('id');
+			$('a.map_selected').removeClass('map_selected');
+			$('li#'+mapId).children('a').addClass('map_selected');
+			$mapInfo.children("div").css('display', 'none');
+			$mapInfo.children('div.'+mapId).css('display', 'block');
 		});
 	}
 

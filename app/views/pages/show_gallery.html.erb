@@ -36,12 +36,11 @@
 	</div>	
 		
 
-<%= javascript_include_tag 'gallery/gallerific.js', 'gallery/history.js', 'gallery/opacity-rollover.js' %>
+<%= javascript_include_tag 'jquery', 'gallery/gallerific.js', 'gallery/history.js', 'gallery/opacity-rollover.js' %>
 <script type="text/javascript">
 	$(document).ready(function($) {
 		// We only want these styles applied when javascript is enabled
 		$('div.navigation').css({'width' : '350px'});
-		$('div.content').css('display', 'block');
 
 		// Initially set opacity on thumbs and add
 		// additional styling for hover effect on thumbs
