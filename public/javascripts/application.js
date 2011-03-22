@@ -68,12 +68,7 @@ var crbc = function () {
 	
 	function mapInfo() {
 		//initialize map functionality in javascript
-		$mapInfo.children("div").css({
-			'position': 'absolute',
-			'top': 0,
-			'left': 0,
-			'display': 'none'
-		});
+		$mapInfo.children("div").css('display', 'none');
 		$mapInfo.children(":first").css('display', 'block');
 		$map.children(":first").children('a').addClass('map_selected');
 		
@@ -83,7 +78,9 @@ var crbc = function () {
 			$('a.map_selected').removeClass('map_selected');
 			$('li#'+mapId).children('a').addClass('map_selected');
 			$mapInfo.children("div").css('display', 'none');
-			$mapInfo.children('div.'+mapId).css('display', 'block');
+			$infoDiv = $mapInfo.children('div.'+mapId);
+			$mapInfo.prepend($infoDiv);
+			$infoDiv.css('display','block');
 		});
 	}
 

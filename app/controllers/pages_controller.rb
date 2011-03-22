@@ -43,6 +43,8 @@ class PagesController < ApplicationController
   def show_map
   	error_404 unless (@page = Page.where(:title => 'Where We Work').first).present?
   	@labels = MapLabel.all
+  	@announcements_widget = Announcement.limit(5)
+    @events_widget = Event.limit(5)
   end
 
 protected

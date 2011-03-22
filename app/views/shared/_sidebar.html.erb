@@ -13,6 +13,7 @@
 				<a href="/events/<%= eve.id%>">Learn More &amp; <abbr title="Request for Response">RSVP</abbr> &raquo;</a>
 			</div>
 		<% end %>
+		<a href="/community/events">View All Events</a>
 	</div>
 	
 	<div class="box-spot blog">
@@ -20,5 +21,6 @@
 		<% @announcements_widget.each do |ann|%>
 			<%= raw(ann.blurb) %>
 		<% end %>
+		<a href="/community/announcements">View All Announcements</a>
 	</div>
 </div>

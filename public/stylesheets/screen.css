@@ -675,6 +675,9 @@ button[disabled] {
 .events h3 {
 	background-position: right -30px;
 }
+.events div {
+	margin-bottom: 10px;
+}
 .blog h3 {
 	background-position: right -60px;
 }
@@ -1039,11 +1042,10 @@ div.pagination span.ellipsis {
      background:url(/images/crbc_map.jpg) no-repeat 0 20px; 
      width:542px; 
      height:542px; 
-     clear:both;
      margin-left:0px;
      position:relative;
 }
-#map div {text-align:left; width:400px; font-size:12px; line-height:1.5em;}
+#map div {text-align:left; overflow: hidden; font-size:12px; line-height:1.5em;}
 
 .map_selected {
 	color: #204a74;
@@ -1051,6 +1053,8 @@ div.pagination span.ellipsis {
 
 #map-info {
 	position: relative;
+	width: 542px;
+	float: left;
 }
 
 #map-info div {
