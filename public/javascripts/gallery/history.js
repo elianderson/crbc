@@ -52,7 +52,7 @@ jQuery.extend({
 		}
 		if(current_hash)
 			jQuery.historyCallback(current_hash.replace(/^#/, ''));
-		setInterval(jQuery.historyCheck, 100);
+		setInterval('jQuery.historyCheck', 100);
 	},
 	
 	historyAddHistory: function(hash) {
