@@ -835,12 +835,14 @@ h6 {
 }
 
 /* - added: photo gallery - */
+/*
 #body_content_title {
 	width: 900px;
 	margin: 0 auto;
 	padding: 10px 0;
 	text-align: left;
 }
+*/
 div.content {
 	/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
 	/* display: none; The gallery is marked up so that it will display images in a formatting list without javascript */
