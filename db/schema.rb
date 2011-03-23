@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20110319234333) do
     t.datetime "updated_at"
     t.string   "image_uid"
     t.string   "image_ext"
-    t.boolean  "gallery",          :default => false
-    t.boolean  "home",             :default => false
+    t.string   "gallery"
+    t.string   "home"
     t.string   "home_title",       :default => "Title"
     t.string   "home_link",        :default => "#link"
     t.string   "home_link_text",   :default => "Link Text"
@@ -99,10 +99,17 @@ ActiveRecord::Schema.define(:version => 20110319234333) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
+<<<<<<< HEAD
     t.text     "meta_description"
     t.string   "browser_title"
     t.string   "title"
     t.string   "meta_keywords"
+=======
+    t.string   "browser_title"
+    t.string   "meta_keywords"
+    t.text     "meta_description"
+    t.string   "title"
+>>>>>>> 29a83a573c84d4a35ff72465126b6c9e4c910dde
     t.datetime "created_at"
     t.datetime "updated_at"
   end
