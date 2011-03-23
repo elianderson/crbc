@@ -6,7 +6,6 @@
   <%= @event.title %>
 <% end %>
 
-<div class="wrap shadow-top inner">
 	<div class="i pad group">
 		<%= render :partial => "/shared/sidebar" %>
 		
@@ -65,6 +64,7 @@
 		    </p>
 		  </section>
 		<% end %>
+		</div>
 
 	<%= form_for(@attendee) do |f| %>
   	<% if @attendee.errors.any? %>
@@ -109,3 +109,5 @@
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
+
+</div>
