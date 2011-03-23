@@ -273,6 +273,8 @@ blockquote p {
 	-moz-box-shadow: -1px -2px 2px 0 rgba(0, 0, 0, 0.40);
 	-webkit-box-shadow: -1px -2px 2px 0 rgba(0, 0, 0, 0.40);
 	box-shadow: -1px -2px 2px 0 rgba(0, 0, 0, 0.40);
+	
+	width: 99.99%;
 }
 .wrap.foot {
 	background: #204a74 url(/images/structure/nav-bg.jpg) repeat-x;
@@ -776,6 +778,10 @@ h3, h4 {
 	content: '';
 }
 
+.photo-gallery {
+	overflow: hidden;
+}
+
 /* - added: what we do - */
 ul li.content:before {
 	content: url(/images/icons/ul-bullet.png);
@@ -890,8 +896,6 @@ div.nav-controls a.next {
 div.slideshow-container {
 	position: relative;
 	height: 550px; /* This should be set to be at least the height of the largest image in the slideshow */
-	width: 900px;
-	margin: 0 auto;
 	background: #FFF;
 	
 	-moz-box-shadow: #000 0 0 3px;
