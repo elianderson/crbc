@@ -772,6 +772,9 @@ h3, h4 {
 
 
 /* -- added styles -- */
+#content #events li:before {
+	content: '';
+}
 
 /* - added: what we do - */
 ul li.content:before {
