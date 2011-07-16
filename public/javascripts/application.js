@@ -42,8 +42,7 @@ var crbc = function () {
 	}
 	
 	function twitterFeed() {
-		var twURL = "http://search.twitter.com/search.json?q=ClackamasRiver&rpp=3&page=1&show_user=true&callback=?",
-			tweet;
+		var twURL = "http://search.twitter.com/search.json?q=ClackamasRiver&rpp=3&page=1&show_user=true&callback=?";
 		
 		$.getJSON(twURL, function( data ) {
 			$.each(data.results, function( index, item ) {
