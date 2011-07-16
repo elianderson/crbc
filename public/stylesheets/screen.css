@@ -273,6 +273,8 @@ blockquote p {
 	-moz-box-shadow: -1px -2px 2px 0 rgba(0, 0, 0, 0.40);
 	-webkit-box-shadow: -1px -2px 2px 0 rgba(0, 0, 0, 0.40);
 	box-shadow: -1px -2px 2px 0 rgba(0, 0, 0, 0.40);
+	
+	width: 99.99%;
 }
 .wrap.foot {
 	background: #204a74 url(/images/structure/nav-bg.jpg) repeat-x;
@@ -588,6 +590,10 @@ button[disabled] {
 	left: 0;
 	z-index: 1;
 }
+#slideshow .slide img {
+	border: none;
+	margin: 0;
+}
 .slide-info {
 	background: rgba(12, 50, 86, 0.90);
 	bottom: 20px;
@@ -656,7 +662,7 @@ button[disabled] {
 	background: transparent url(/images/structure/pager-dots.png) no-repeat 0 5px;
 	display: block;
 	height: 20px;
-	margin: 5px 0 0;
+	margin: -12px 0 0;
 	width: 20px;
 }
 .slide-nav-full a:hover, .slide-nav-full .on a, .slide-nav-full li.activeSlide a {
@@ -670,6 +676,9 @@ button[disabled] {
 }
 .events h3 {
 	background-position: right -30px;
+}
+.events div {
+	margin-bottom: 10px;
 }
 .blog h3 {
 	background-position: right -60px;
@@ -745,6 +754,7 @@ button[disabled] {
 }
 
 
+
 /* -- typography -- */
 a {
 	font-family: 'LatoRegular', 'Helvetica Neue', Arial, Sans-serif;
@@ -765,6 +775,13 @@ h3, h4 {
 
 
 /* -- added styles -- */
+#content #events li:before {
+	content: '';
+}
+
+.photo-gallery {
+	overflow: hidden;
+}
 
 /* - added: what we do - */
 ul li.content:before {
@@ -825,15 +842,17 @@ h6 {
 }
 
 /* - added: photo gallery - */
+/*
 #body_content_title {
 	width: 900px;
 	margin: 0 auto;
 	padding: 10px 0;
 	text-align: left;
 }
+*/
 div.content {
 	/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
-	display: none;
+	/* display: none; The gallery is marked up so that it will display images in a formatting list without javascript */
 	position: relative;
 }
 div.content a, div.navigation a {
@@ -878,8 +897,6 @@ div.nav-controls a.next {
 div.slideshow-container {
 	position: relative;
 	height: 550px; /* This should be set to be at least the height of the largest image in the slideshow */
-	width: 900px;
-	margin: 0 auto;
 	background: #FFF;
 	
 	-moz-box-shadow: #000 0 0 3px;
@@ -942,7 +959,7 @@ div.image-desc {
 	line-height: 1.3em;
 	padding-top: 12px;
 	width:500px;
-	margin-left:598px;
+	margin-left:555px;
 	font-size:1.25em;
 	text-align:center;
 }
@@ -956,6 +973,14 @@ ul.thumbs {
 	margin: 0;
 	padding: 0;
 	width: 350px;
+	list-style-type: none;
+}
+#content ul.thumbs li:before {
+	content: '';
+}
+#content ul.thumbs img {
+	border: none;
+	margin: 0;
 }
 ul.thumbs li {
 	float: left;
@@ -1017,4 +1042,67 @@ div.pagination span.current {
 div.pagination span.ellipsis {
 	border: none;
 	padding: 5px 0 3px 2px;
+}
+
+
+/*map page - where we work*/
+#map-container .col { margin-right: 10px;}
+#map-container .col8 { width:542px;}
+#map { 
+     background:url(/images/crbc_map.jpg) no-repeat 0 20px; 
+     width:542px; 
+     height:542px; 
+     margin-left:0px;
+     position:relative;
+}
+#map div {text-align:left; overflow: hidden; font-size:12px; line-height:1.5em;}
+
+.map_selected {
+	color: #204a74;
+}
+
+#map-info {
+	position: relative;
+	width: 542px;
+	float: left;
+}
+
+#map-info div {
+	
+}
+
+#rock_creek { position:absolute; top:20px; left:30px;}
+
+#richardson_creek { position:absolute; top:10px; left:120px; text-align:center; width:70px;}
+
+#deep_creek { position:absolute; top:65px; left:170px; text-align:center; width:40px;}
+
+#goose_creek { position:absolute; top:135px; left:60px; text-align:center; width:40px;}
+
+#eagle_creek { position:absolute; top:155px; left:230px;}
+
+#clear_creek { position:absolute; top:165px; left:135px; text-align:center; width:40px;}
+
+#north_fork_clackamas_river  { position:absolute; top:185px; left:265px; text-align:center; width:40px; font-size:10px; line-height:11px;}
+
+#lower_clackamas_river  { position:absolute; top:220px; left:95px; text-align:center; width:70px;}
+
+#south_fork_clackamas_river  { position:absolute; top:240px; left:225px; text-align:center; width:40px; font-size:10px; line-height:11px;}
+
+#roaring_river  { position:absolute; top:235px; left:325px; font-size:10px;}
+
+#middle_clackamas_river { position:absolute; top:270px; left:290px; text-align:center; width:70px; font-size:10px; line-height:11px;}
+
+#fish_creek  { position:absolute; top:315px; left:245px; text-align:center; width:40px; font-size:10px; line-height:11px;}
+
+#oak_grove_fork_clackamas_river { position:absolute; top:295px; left:375px; text-align:center; width:90px; font-size:10px; line-height:11px;}
+
+#hot_springs_fork_collawash_river  { position:absolute; top:395px; left:235px; text-align:center; width:40px; font-size:10px; line-height:11px;}
+
+#collawash_river { position:absolute; top:425px; left:305px; text-align:center; width:40px; font-size:10px; line-height:11px;}
+
+#upper_clackamas_river  { position:absolute; top:425px; left:395px; text-align:center; width:40px; font-size:10px; line-height:11px;}
+
+#content ul#map li:before {
+	content: '';
 }

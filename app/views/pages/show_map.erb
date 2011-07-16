@@ -3,43 +3,22 @@
 </div>
 
 <div class="wrap shadow-top inner">
-	<div class="i pad group">
-		<div class="col social">
-			<div class="box-light twitter">
-				<h3>Tweet, Tweet</h3>
-				<a href="">Follow Us &raquo;</a>
-			</div>
-			
-			<div class="box-light events">
-				<h3>Next Events</h3>
-				<a href="">Learn More &amp; <abbr title="Request for Response">RSVP</abbr> &raquo;</a>
-			</div>
-			
-			<div class="box-spot blog">
-				<h3>From Our Blog</h3>
-				<a href="">Read More &raquo;</a>
-			</div>
-		</div>
-		
+	<div class="i pad group">		
+		<%= render :partial => "/shared/sidebar" %>
 		<%= render :partial => "/shared/content_page" %>
-	</div>
-	
-	<div id="map-container" class="i pad group">
-		<div class="col col8">
-			<ul id="map">
-				<% @labels.each do |label| %>
-					<% idTitle = label.title.gsub(/\s/, '_').downcase %>
-					<li id="<%= idTitle %>">
-						<a href="#"><%=raw label.title %></a>
-					</li>
-				<% end %>
-			</ul>
-		</div>
-		
-		<div id="map-info" class="col col4 last">
+		<ul id="map" class="col">
 			<% @labels.each do |label| %>
-				<% titleClass = label.title.gsub(/\s/, '_').downcase %>
+				<% idTitle = label.title.gsub(/\W/, '_').downcase %>
+				<li id="<%= idTitle %>">
+					<a><%=raw label.title %></a>
+				</li>
+			<% end %>
+		</ul>
+		<div id="map-info">
+			<% @labels.each do |label| %>
+				<% titleClass = label.title.gsub(/\W/, '_').downcase %>
 				<div class="<%= titleClass %>">
+					<h3><%=raw label.title %></h3>
 					<%=raw label.description %>
 				</div>
 			<% end %>
