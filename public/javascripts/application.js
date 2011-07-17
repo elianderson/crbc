@@ -49,16 +49,18 @@ var crbc = function () {
 	}
 	
 	function twitterFeed() {
-		var twURL = "http://search.twitter.com/search.json?q=ClackamasRiver&rpp=3&page=1&show_user=true&callback=?";
+		//var twURL = "http://search.twitter.com/search.json?q=ClackamasRiver&rpp=3&page=1&show_user=true&callback=?";
+		var twURL = "http://api.twitter.com/1/statuses/user_timeline.json?count=5&screen_name=ClackamasRiver";
 		
 		$.getJSON(twURL, function( data ) {
-			$.each(data.results, function( index, item ) {
+			console.log(data);
+			$.each(data, function( index, item ) {
 				tweet = "";
-				tweet += '<li><p><img src="' + item.profile_image_url + '" alt="' + item.from_user + '" />';
+				tweet += '<li><p><img src="' + item.user.profile_image_url + '" alt="' + item.user.name + '" />';
 				tweet += item.text.linkify();
 				tweet += '<span class="time"> ' + relativeTime(item.created_at) + '</span>';
-				tweet += '<span class="author"> by: <a href="http://twitter.com/' + item.from_user + '" target="_blank">';
-				tweet += '@' + item.from_user + '</a>' + '</span>';
+				tweet += '<span class="author"> by: <a href="http://twitter.com/' + item.user.name + '" target="_blank">';
+				tweet += '@' + item.user.name + '</a>' + '</span>';
 				tweet += '</p></li>';
 				$tweetlist.append(tweet);
 			});
