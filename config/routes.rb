@@ -12,6 +12,8 @@ Super::Application.routes.draw do
 	
 	match 'new-person' => 'person#newsletter'
 	
+	match 'twFeed' => 'application#twFeed', :as => :tweets
+	
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.
