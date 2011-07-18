@@ -99,10 +99,17 @@ ActiveRecord::Schema.define(:version => 20110319234333) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
+<<<<<<< HEAD
+    t.text     "meta_description"
+    t.string   "browser_title"
+    t.string   "title"
+    t.string   "meta_keywords"
+=======
     t.string   "browser_title"
     t.string   "meta_keywords"
     t.text     "meta_description"
     t.string   "title"
+>>>>>>> 29a83a573c84d4a35ff72465126b6c9e4c910dde
     t.datetime "created_at"
     t.datetime "updated_at"
   end
